@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/03/09 16:13:10 by nle-bret         ###   ########.fr       */
+/*   Created: 2022/03/09 14:06:25 by nle-bret          #+#    #+#             */
+/*   Updated: 2022/03/09 14:50:17 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "sources/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-int		ft_printf(const char *format, ...);
-int		push_swap(int size, char **nbr_on_char);
-int		ft_atoi(const char *nptr);
-void	fct_sa(int *la);
-void	fct_sb(int *lb);
-void	fct_ss(int *la, int *lb);
-
-#endif
+#include "push_swap.h"
+int	main(int argc, char **argv)
+{
+	ft_printf("let's go !\n\n");
+	push_swap(argc, argv);
+	return (0);
+}
