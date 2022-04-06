@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/03/09 16:13:10 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/03/11 12:07:35 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int		ft_atoi(const char *nptr);
 void	fct_sa(int *la);
 void	fct_sb(int *lb);
 void	fct_ss(int *la, int *lb);
+void	fct_pa(int *la, int *lb);
+void	fct_pb(int *la, int *lb);
 
 #endif

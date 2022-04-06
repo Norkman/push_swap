@@ -1,51 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_fct_s.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 15:18:27 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/03/09 16:21:58 by nle-bret         ###   ########.fr       */
+/*   Created: 2021/11/26 17:37:57 by nle-bret          #+#    #+#             */
+/*   Updated: 2021/12/03 13:12:54 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fct_sa(int *la)
+char	*ft_strdup(const char *s)
 {
-	int	tmp;
-	
-	if (la[0])
+	char	*str;
+	char	*s_tmp;
+	int		i;
+
+	s_tmp = (char *)s;
+	str = malloc(sizeof(*str) * (ft_strlen(s_tmp) + 1));
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	if (s_tmp)
 	{
-		tmp = la[0];
-		la[0] = la[1];
-		la[1] = tmp;
-		ft_printf("sa\n");
+		while (s_tmp[i])
+		{
+			str[i] = s_tmp[i];
+			i++;
+		}
+		str[i] = '\0';
 	}
-
-	else
-		return ;
-}
-
-void	fct_sb(int *lb)
-{
-	int	tmp;
-
-	if (lb[0])
-	{
-		tmp = lb[0];
-		lb[0] = lb[1];
-		lb[1] = tmp;
-		ft_printf("sb\n");
-	}
-	else
-		return ;
-
-}
-
-void	fct_ss(int *la, int *lb)
-{
-	fct_sb(lb);
-	fct_sa(la);
+	return (str);
 }

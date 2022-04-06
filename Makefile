@@ -6,7 +6,7 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/03/09 16:22:17 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/03/11 11:24:18 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC		= push_swap.c\
 		  ft_printf.c\
 		  ft_printf_utils.c\
 		  ft_printf_utils2.c\
-		  push_swap_fct_s.c
+		  push_swap_fct.c
 
 OBJS	= ${SRC:.c=.o}
 
