@@ -12,29 +12,33 @@
 
 #include "push_swap.h"
 
-void	lst_printf(t_list *list)
+void	lst_printf(t_list **list)
 {
 	int	nbr;
+	t_list *tmp;
 
-	while (list)
+	tmp = *list;
+	while (tmp->next)
 	{
-		nbr = list->content;
+		nbr = tmp->content;
 		ft_printf("%d\n",nbr);
-		list = list->next;
+		tmp = tmp->next;
 	}
 }
 
-t_list *ft_make_list(int len_list, char **nbr_char)
+t_list **ft_make_list(int len_list, char **nbr_char)
 {
 	t_list	**list;
 	t_list	*list_new;
 	int	i;
 
+	list = NULL;
 	i = 1;
 	while (i <= len_list)
 	{
-		list_new = ft_lstnew(ft_atoi(nbr_char[i]));
-		list = ft_lstadd_back(list, list_new);
+		list_new = ft_lstnew(ft_atoi(nbr_char[1]));
+		printf("OK");
+		//ft_lstadd_back(list, list_new);
 		i++;
 	}
 	free(list_new);

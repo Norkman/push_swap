@@ -62,11 +62,8 @@ SRC		= ft_bzero.c\
 		  ft_utoa.c\
 		  ft_printf.c\
 		  ft_printf_utils.c\
-		  ft_printf_utils2.c
-
-SRCS	= ${addprefix ${SRC_DIR}, ${SRC}}
-
-BONUS	= ft_lstnew.c\
+		  ft_printf_utils2.c\
+		  ft_lstnew.c\
           ft_lstadd_front.c\
           ft_lstsize.c\
 		  ft_lstlast.c\
@@ -76,9 +73,9 @@ BONUS	= ft_lstnew.c\
 		  ft_lstiter.c\
 		  ft_lstmap.c
 
-OBJS	= ${SRCS:.c=.o}
+SRCS	= ${addprefix ${SRC_DIR}, ${SRC}}
 
-B_OBJS	= ${BONUS:.c=.o}
+OBJS	= ${SRCS:.c=.o}
 
 CC		= gcc
 
@@ -91,11 +88,8 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-bonus:    ${OBJS} ${B_OBJS}
-	ar rc ${NAME} ${OBJS} ${B_OBJS}
-
 clean:
-	rm -f ${OBJS} ${B_OBJS}
+	rm -f ${OBJS}
 
 fclean:	clean
 	rm -f ${NAME}
