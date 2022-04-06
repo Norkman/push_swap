@@ -12,11 +12,14 @@
 
 #include "push_swap.h"
 
-void	lst_printf(t_list **list)
+void	lst_printf(t_list *list)
 {
-	while (*list)
+	int	nbr;
+
+	while (list)
 	{
-		ft_putnbr_fd(*list->content, 1);
+		nbr = list->content;
+		ft_printf("%d\n",nbr);
 		list = list->next;
 	}
 }

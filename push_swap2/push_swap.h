@@ -19,7 +19,7 @@
 # include <stdlib.h>
 
 t_list	*ft_make_list(int len_list, char **nbr_char);
-void	lst_printf(t_list **list);
+void	lst_printf(t_list *list);
 int		ft_printf(const char *format, ...);
 int		push_swap(int argc, char **argv);
 int		ft_atoi(const char *nptr);
