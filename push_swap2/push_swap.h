@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/04/05 16:38:34 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:16:16 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-t_list	**ft_make_list(int len_list, char **nbr_char);
-void	lst_printf(t_list **list);
-//int		ft_printf(const char *format, ...);
+t_list	*ft_make_list(int len_list, char **nbr_char);
+t_list	*add_list(int num, t_list *head);
+void	printf_list(t_list *head);
+int		count_list(t_list *head);
+t_list	*remove_list(int num, t_list *head);
+void	lst_printf(t_list *list);
+void	free_list(t_list *head);
 int		push_swap(int argc, char **argv);
-int		ft_atoi(const char *nptr);
 void	fct_sa(int *la);
 void	fct_sb(int *lb);
 void	fct_ss(int *la, int *lb);

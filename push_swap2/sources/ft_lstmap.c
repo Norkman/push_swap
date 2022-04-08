@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 09:17:12 by nle-bret          #+#    #+#             */
-/*   Updated: 2021/12/03 17:13:24 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:20:02 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, int (*f)(int), int (*del)(int))
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_lst, new_element);
+		ft_lstadd_back(new_lst, new_element);
 		tmp_lst = tmp_lst->next;
 	}
 	return (new_lst);

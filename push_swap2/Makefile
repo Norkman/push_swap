@@ -6,7 +6,7 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/04/05 15:59:25 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/04/08 12:38:36 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ endif
 NAME	= push_swap.a
 
 SRC		= push_swap.c\
-		  push_swap_utils.c
+		  push_swap_utils.c\
+		  fct_lst_push_swap.c
 #		  ft_printf.c\
 #		  ft_printf_utils.c\
 #		  ft_printf_utils2.c\

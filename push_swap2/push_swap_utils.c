@@ -6,41 +6,25 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:14:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/04/05 16:52:34 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:26:48 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lst_printf(t_list **list)
+t_list *ft_make_list(int len_list, char **nbr_char)
 {
-	int	nbr;
-	t_list *tmp;
-
-	tmp = *list;
-	while (tmp->next)
-	{
-		nbr = tmp->content;
-		ft_printf("%d\n",nbr);
-		tmp = tmp->next;
-	}
-}
-
-t_list **ft_make_list(int len_list, char **nbr_char)
-{
-	t_list	**list;
-	t_list	*list_new;
+	t_list	*list;
+	int	new_content;
 	int	i;
 
 	list = NULL;
-	i = 1;
-	while (i <= len_list)
+	i = len_list - 1;
+	while (i >= 1)
 	{
-		list_new = ft_lstnew(ft_atoi(nbr_char[1]));
-		printf("OK");
-		//ft_lstadd_back(list, list_new);
-		i++;
+		new_content = ft_atoi(nbr_char[i]);
+		list = add_list(new_content, list);
+		i--;
 	}
-	free(list_new);
 	return (list);
 }
