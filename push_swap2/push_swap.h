@@ -17,7 +17,11 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-
+typedef struct s_tablist
+{
+	t_list	*la;
+	t_list	*lb;
+}t_tablist;
 t_list	*ft_make_list(int len_list, char **nbr_char);
 t_list	*add_list(int num, t_list *head);
 void	printf_list(t_list *head);
@@ -26,8 +30,8 @@ t_list	*remove_list(int num, t_list *head);
 void	lst_printf(t_list *list);
 void	free_list(t_list *head);
 int		push_swap(int argc, char **argv);
-void	fct_sa(int *la);
-void	fct_sb(int *lb);
+t_list	*fct_sa(t_list *list_a);
+t_list	*fct_sb(t_list *list_b);
 void	fct_ss(int *la, int *lb);
 void	fct_pa(int *la, int *lb);
 void	fct_pb(int *la, int *lb);

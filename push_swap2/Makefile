@@ -21,7 +21,8 @@ NAME	= push_swap.a
 
 SRC		= push_swap.c\
 		  push_swap_utils.c\
-		  fct_lst_push_swap.c
+		  fct_lst_push_swap.c\
+		  push_swap_fct.c
 #		  ft_printf.c\
 #		  ft_printf_utils.c\
 #		  ft_printf_utils2.c\
@@ -50,6 +51,6 @@ fclean:	clean
 re:	fclean all
 
 %.o: %.c
-	$(CC) $(FLAGS) -I push_swap.h.h -c $<  -o $(<:.c=.o)
+	$(CC) $(FLAGS) -I push_swap.h -c $<  -o $(<:.c=.o)
 
 .PHONY: all clean fclean re

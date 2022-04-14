@@ -32,10 +32,11 @@ void	printf_list(t_list *head)
 	{
         ft_printf("%d ", tmp->content);
         tmp = tmp->next;
-    }
+	}
+	ft_printf("\n");
 }
 
-/* Count the number of nodes in a linked list */
+/* Count the number of list in a linked list */
 int	count_list(t_list *head)
 {
     int cnt = 0;

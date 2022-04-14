@@ -14,10 +14,13 @@
 
 int	push_swap(int argc, char **argv)
 {
-	t_list *list_a;
+	t_tablist	*tl;
 
-	list_a = ft_make_list(argc, argv);
-	printf_list(list_a);
-	free_list(list_a);
+	tl->lb = NULL;
+	tl->la = ft_make_list(argc, argv);
+	printf_list(tl->la);
+	tl->la = fct_sa(tl->la);
+	printf_list(tl->la);
+	free_list(tl->la);
 	return (0);
 }

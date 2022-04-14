@@ -13,7 +13,6 @@
 int	main(int argc, char **argv)
 {
 	ft_printf("let's go !\n\n");
-	ft_printf("%d\n\n", ft_atoi(argv[1]));
 	push_swap(argc, argv);
 	return (0);
 }
