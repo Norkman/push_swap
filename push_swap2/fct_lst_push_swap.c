@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 12:02:25 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/04/08 13:28:29 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/04/21 13:17:16 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,21 @@ t_list	*remove_list(int num, t_list *head)
 	return(head);
 }
 
-void	free_list(t_list *head)
+void	free_list(t_tablist *tl)
 {
-   t_list *tmp;
+	t_list *tmp;
 
-   while (head != NULL)
-    {
-       tmp = head;
-       head = head->next;
+	while (tl->la != NULL)
+	{
+       tmp = tl->la;
+       tl->la = tl->la->next;
        free(tmp);
     }
-
+	while (tl->lb != NULL)
+	{
+       tmp = tl->lb;
+       tl->lb = tl->lb->next;
+       free(tmp);
+    }
+	free(tl);
 }
