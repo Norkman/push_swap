@@ -37,24 +37,33 @@ t_tablist	*fct_swap_arg(t_tablist *tl, char arg)
 	return (tl);
 }
 
-t_tablist	*fct_push(t_tablist *tl, t_list *l1, t_list *l2)
+t_tablist	*fct_push(t_tablist *tl, char c)
 {
 	t_list	*tmp;
 
-	l1 = add_list(l2->content, l1);
-	tmp = l2;
-	l2 = l2->next;
-	free(tmp);
+	if (c == 'a')
+	{
+		tl->la = add_list(tl->lb->content, tl->la);
+		tmp = tl->lb;
+		tl->lb = tl->lb->next;
+		free(tmp);
+	}
+	if (c == 'b')
+	{
+		tl->lb = add_list(tl->la->content, tl->lb);
+		tmp = tl->la;
+		tl->la = tl->la->next;
+		free(tmp);
+	}
 	return (tl);
 }
 
 t_tablist	*fct_push_arg(t_tablist *tl, char arg)
 {
 	if (arg == 'a' && count_list(tl->lb) > 1)
-		tl = fct_push(tl, tl->la, tl->lb);
-	ft_printf("OK\n\n");
+		tl = fct_push(tl, 'a');
 	if (arg == 'b' && count_list(tl->la) > 1)
-		tl = fct_push(tl, tl->lb, tl->la);
+		tl = fct_push(tl, 'b');
 	ft_printf("p%c\n", arg);
 	return (tl);
 }

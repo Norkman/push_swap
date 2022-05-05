@@ -32,7 +32,12 @@ void	free_list(t_tablist *tl);
 int		push_swap(int argc, char **argv);
 t_list	*fct_swap(t_list *list);
 t_tablist	*fct_swap_arg(t_tablist *tl, char arg);
-t_tablist	*fct_push(t_tablist *tl, t_list *l1, t_list *l2);
+t_tablist	*fct_push(t_tablist *tl, char c);
 t_tablist	*fct_push_arg(t_tablist *tl, char arg);
+t_tablist	*fct_rotate_arg(t_tablist *tl, char arg);
+t_list	*fct_rotate(t_list *list);
+t_tablist	*fct_rotate_reverse_arg(t_tablist *tl, char arg);
+t_list	*fct_rotate_reverse(t_list *list);
+t_tablist	*ft_sort_three(t_tablist *tl);
 
 #endif

@@ -28,3 +28,22 @@ t_list *ft_make_list(int len_list, char **nbr_char)
 	}
 	return (list);
 }
+
+t_tablist	*ft_sort_three(t_tablist *tl)
+{
+	char	*list_fct;
+
+	while (tl)
+	{
+		if (tl->la < tl->la->next && tl->la->next < tl->la->next->next)
+			return (tl);
+		if (tl->la > tl->la->next && tl->la->next < tl->la->next->next)
+			tl = fct_swap_arg(tl, 'a');
+		if (tl->la > tl->la->next && tl->la->next > tl->la->next->next)
+			tl = fct_rotate_arg(tl, 'a');
+		if (tl->la < tl->la->next && tl->la->next > tl->la->next->next)
+			tl = fct_rotate_reverse_arg(tl, 'a');
+	}
+	return (tl);
+
+}

@@ -15,28 +15,15 @@
 int	push_swap(int argc, char **argv)
 {
 	t_tablist	*tl;
+	char **list_fct;
 
 	tl = malloc(sizeof(*tl));
 	tl->lb = NULL;
-
 	tl->la = ft_make_list(argc, argv);
-
-	ft_printf("list a : ");
 	printf_list(tl->la);
-	ft_printf("\n");
-	ft_printf("list b : ");
-	printf_list(tl->lb);
-	ft_printf("\n");
-
-	tl = fct_push_arg(tl, 'b');
-
-	ft_printf("list a : ");
+	if (count_list(tl->la) == 3)
+		tl = ft_sort_three(tl);
 	printf_list(tl->la);
-	ft_printf("\n");
-	ft_printf("list b : ");
-	printf_list(tl->lb);
-	ft_printf("\n");
-
 	free_list(tl);
 	return (0);
 }
