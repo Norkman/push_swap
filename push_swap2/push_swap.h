@@ -39,5 +39,6 @@ t_list	*fct_rotate(t_list *list);
 t_tablist	*fct_rotate_reverse_arg(t_tablist *tl, char arg);
 t_list	*fct_rotate_reverse(t_list *list);
 t_tablist	*ft_sort_three(t_tablist *tl);
+int	ft_check_error(int length, char **list);
 
 #endif

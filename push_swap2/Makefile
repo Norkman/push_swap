@@ -21,6 +21,7 @@ NAME	= push_swap.a
 
 SRC		= push_swap.c\
 		  push_swap_utils.c\
+		  push_swap_utils2.c\
 		  fct_lst_push_swap.c\
 		  push_swap_fct.c\
 		  push_swap_fct2.c
