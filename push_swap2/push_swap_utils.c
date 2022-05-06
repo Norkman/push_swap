@@ -35,13 +35,17 @@ t_tablist	*ft_sort_three(t_tablist *tl)
 
 	while (tl)
 	{
-		if (tl->la < tl->la->next && tl->la->next < tl->la->next->next)
+		if (tl->la->content < tl->la->next->content 
+				&& tl->la->next->content < tl->la->next->next->content)
 			return (tl);
-		if (tl->la > tl->la->next && tl->la->next < tl->la->next->next)
+		if (tl->la->content > tl->la->next->content 
+				&& tl->la->next->content < tl->la->next->next->content)
 			tl = fct_swap_arg(tl, 'a');
-		if (tl->la > tl->la->next && tl->la->next > tl->la->next->next)
+		if (tl->la->comtent > tl->la->next->content 
+				&& tl->la->next->content > tl->la->next->next->content)
 			tl = fct_rotate_arg(tl, 'a');
-		if (tl->la < tl->la->next && tl->la->next > tl->la->next->next)
+		if (tl->la->content < tl->la->next->content 
+				&& tl->la->next->content > tl->la->next->next->content)
 			tl = fct_rotate_reverse_arg(tl, 'a');
 	}
 	return (tl);
