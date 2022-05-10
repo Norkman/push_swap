@@ -100,12 +100,26 @@ t_tablist	*ft_sort_three(t_tablist *tl)
 
 t_tablist	*ft_sort_under_five(t_tablist *tl)
 {
-	int len_la;
+	int 	len_la;
 
 	len_la = count_list(tl->la);
 	if (len_la == 5)
 		tl == fct_push_arg(tl, 'b');
 	tl = fct_push_arg(tl, 'b');
+	tl = ft_sort_three(tl);
+	if (ft_is_sorted(tl->lb) == 0)
+		fct_swap_arg(tl, 'b');
+	while (count_list(tl->la) != len_la)
+	{
+		if (tl->la->content > tl->lb->content)
+			fct_push_arg(tl, 'a');
+		else
+			fct_rotate_arg(tl, 'a');
+	}
+	while (ft_is_sorted(tl->la) == 1)
+		fct_rotate_reverse_arg(tl, 'a');
+
+	/*
 	while (ft_is_sorted(tl->la) == 1 || count_list(tl->la) != len_la)
 	{
 		tl = ft_sort_three(tl);
@@ -114,21 +128,21 @@ t_tablist	*ft_sort_under_five(t_tablist *tl)
 			tl = fct_swap_arg(tl, 'b');
 		if (tl->la->content > tl->la->next->content)
 		{
+			tl = fct_swap_arg(tl, 'a');
+			if (ft_is_sorted(tl->la) == 0 && count_list(tl->la) == 5)
+				return (tl);
 			if (count_list(tl->la) == 5)
 			{
-				fct_rotate_arg(tl, 'a');
 				tl = fct_push_arg(tl, 'b');
 				tl = fct_push_arg(tl, 'b');
 			}
 			else 
-			{
-				tl = fct_swap_arg(tl, 'a');
 				tl = fct_push_arg(tl, 'b');
-			}
 		}
 	//tl = fct_push_arg(tl, 'a');
 	//if (tl->la->content > tl->la->next->content)
 	//	tl = fct_rotate_arg(tl, 'a');
 	}
+	*/
 	return (tl);
 }
