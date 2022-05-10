@@ -26,7 +26,7 @@ t_tablist	*fct_swap_arg(t_tablist *tl, char arg)
 {
 	if (arg == 'a' && count_list(tl->la) > 1)
 		tl->la = fct_swap(tl->la);
-	if (arg == 'b' && count_list(tl->lb))
+	if (arg == 'b' && count_list(tl->lb) > 1)
 		tl->lb = fct_swap(tl->lb);
 	if (arg == 's' && count_list(tl->la) > 1 && count_list(tl->lb) > 1)
 	{
@@ -60,9 +60,9 @@ t_tablist	*fct_push(t_tablist *tl, char c)
 
 t_tablist	*fct_push_arg(t_tablist *tl, char arg)
 {
-	if (arg == 'a' && count_list(tl->lb) > 1)
+	if (arg == 'a' && count_list(tl->lb) > 0)
 		tl = fct_push(tl, 'a');
-	if (arg == 'b' && count_list(tl->la) > 1)
+	if (arg == 'b' && count_list(tl->la) > 0)
 		tl = fct_push(tl, 'b');
 	ft_printf("p%c\n", arg);
 	return (tl);
