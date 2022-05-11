@@ -5,77 +5,65 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 15:18:27 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/03/11 12:06:39 by nle-bret         ###   ########.fr       */
+/*   Created: 2022/04/21 12:50:38 by nle-bret          #+#    #+#             */
+/*   Updated: 2022/04/21 17:49:15 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	fct_sa(int *la)
-{
-	int	tmp;
-	
-	if (la[0])
-	{
-		tmp = la[0];
-		la[0] = la[1];
-		la[1] = tmp;
-		ft_printf("sa\n");
-	}
-
-	else
-		return ;
-}
-
-void	fct_sb(int *lb)
+t_list	*fct_swap(t_list *list)
 {
 	int	tmp;
 
-	if (lb[0])
-	{
-		tmp = lb[0];
-		lb[0] = lb[1];
-		lb[1] = tmp;
-		ft_printf("sb\n");
-	}
-	else
-		return ;
-
+	tmp = list->content;
+	list->content = list->next->content;
+	list->next->content = tmp;
+	return (list);
 }
 
-void	fct_ss(int *la, int *lb)
+t_tablist	*fct_swap_arg(t_tablist *tl, char arg)
 {
-	fct_sb(lb);
-	fct_sa(la);
+	if (arg == 'a' && count_list(tl->la) > 1)
+		tl->la = fct_swap(tl->la);
+	if (arg == 'b' && count_list(tl->lb) > 1)
+		tl->lb = fct_swap(tl->lb);
+	if (arg == 's' && count_list(tl->la) > 1 && count_list(tl->lb) > 1)
+	{
+		tl->la = fct_swap(tl->la);
+		tl->lb = fct_swap(tl->lb);
+	}
+	ft_printf("s%c\n", arg);
+	return (tl);
 }
 
-void	fct_pa(int *la, int *lb)
+t_tablist	*fct_push(t_tablist *tl, char c)
 {
-	int tmp;
+	t_list	*tmp;
 
-	if (lb[0])
+	if (c == 'a')
 	{
-		tmp = la[0];
-		la[0] = lb[0];
-		lb[0] = tmp;
-		ft_printf("pa\n");
+		tl->la = add_list(tl->lb->content, tl->la);
+		tmp = tl->lb;
+		tl->lb = tl->lb->next;
+		free(tmp);
 	}
-	else 
-		return ;
+	if (c == 'b')
+	{
+		tl->lb = add_list(tl->la->content, tl->lb);
+		tmp = tl->la;
+		tl->la = tl->la->next;
+		free(tmp);
+	}
+	return (tl);
 }
 
-void	fct_pb(int *lb, int *la)
+t_tablist	*fct_push_arg(t_tablist *tl, char arg)
 {
-	int tmp;
-
-	if (la[0])
-	{
-		tmp = lb[0];
-		lb[0] = la[0];
-		la[0] = tmp;
-		ft_printf("pb\n");
-	}
-	else 
-		return ;
+	if (arg == 'a' && count_list(tl->lb) > 0)
+		tl = fct_push(tl, 'a');
+	if (arg == 'b' && count_list(tl->la) > 0)
+		tl = fct_push(tl, 'b');
+	ft_printf("p%c\n", arg);
+	return (tl);
 }

@@ -6,7 +6,7 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/03/11 11:24:18 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/05/11 12:16:47 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,15 @@ endif
 NAME	= push_swap.a
 
 SRC		= push_swap.c\
-		  ft_printf.c\
-		  ft_printf_utils.c\
-		  ft_printf_utils2.c\
-		  push_swap_fct.c
+		  push_swap_utils.c\
+		  push_swap_utils2.c\
+		  fct_lst_push_swap.c\
+		  push_swap_fct.c\
+		  push_swap_fct2.c
+#		  ft_printf.c\
+#		  ft_printf_utils.c\
+#		  ft_printf_utils2.c\
+#		  push_swap_fct.c
 
 OBJS	= ${SRC:.c=.o}
 
@@ -48,6 +53,6 @@ fclean:	clean
 re:	fclean all
 
 %.o: %.c
-	$(CC) $(FLAGS) -I push_swap.h.h -c $<  -o $(<:.c=.o)
+	$(CC) $(FLAGS) -I push_swap.h -c $<  -o $(<:.c=.o)
 
 .PHONY: all clean fclean re

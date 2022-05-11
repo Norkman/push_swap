@@ -6,7 +6,7 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/01/07 15:33:42 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/04/05 14:53:27 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,11 +59,11 @@ SRC		= ft_bzero.c\
 		  ft_convert_base2.c\
 		  ft_llutoa.c\
 		  ft_putnbr_base.c\
-		  ft_utoa.c
-
-SRCS	= ${addprefix ${SRC_DIR}, ${SRC}}
-
-BONUS	= ft_lstnew.c\
+		  ft_utoa.c\
+		  ft_printf.c\
+		  ft_printf_utils.c\
+		  ft_printf_utils2.c\
+		  ft_lstnew.c\
           ft_lstadd_front.c\
           ft_lstsize.c\
 		  ft_lstlast.c\
@@ -73,9 +73,9 @@ BONUS	= ft_lstnew.c\
 		  ft_lstiter.c\
 		  ft_lstmap.c
 
-OBJS	= ${SRCS:.c=.o}
+SRCS	= ${addprefix ${SRC_DIR}, ${SRC}}
 
-B_OBJS	= ${BONUS:.c=.o}
+OBJS	= ${SRCS:.c=.o}
 
 CC		= gcc
 
@@ -88,11 +88,8 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-bonus:    ${OBJS} ${B_OBJS}
-	ar rc ${NAME} ${OBJS} ${B_OBJS}
-
 clean:
-	rm -f ${OBJS} ${B_OBJS}
+	rm -f ${OBJS}
 
 fclean:	clean
 	rm -f ${NAME}

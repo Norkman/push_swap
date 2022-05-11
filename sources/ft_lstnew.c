@@ -6,13 +6,13 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:29:56 by nle-bret          #+#    #+#             */
-/*   Updated: 2021/12/01 13:11:27 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:22:28 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*chain;
 
