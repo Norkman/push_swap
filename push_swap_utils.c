@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:14:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/11 14:51:09 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/11 18:40:07 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ t_tablist	*ft_sort_under_five(t_tablist *tl)
 	int 	len_la;
 
 	len_la = count_list(tl->la);
+	tl->la = ft_higher_up(tl->la);
+	/*
 	if (ft_isbigger(tl->la) == 0)
 		fct_rotate_arg(tl, 'a');
 	if (len_la < 3)
@@ -62,5 +64,6 @@ t_tablist	*ft_sort_under_five(t_tablist *tl)
 	}
 	while (ft_is_sorted(tl->la) == 1)
 		fct_rotate_reverse_arg(tl, 'a');
+	*/
 	return (tl);
 }

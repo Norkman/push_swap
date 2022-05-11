@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/11 14:24:12 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/11 18:45:49 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,8 @@ int	ft_is_sorted(t_list *list);
 t_tablist	*ft_sort_under_five(t_tablist *tl);
 int	ft_isbigger(t_list *list);
 int	ft_check_double(t_list *list);
+t_list *ft_higher_up(t_list *list);
+int	ft_findpos(t_list *list, int nbr);
+int ft_findhigher(t_list *list);
 
 #endif

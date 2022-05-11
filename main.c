@@ -6,13 +6,12 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:06:25 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/03/09 14:50:17 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:48:55 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 int	main(int argc, char **argv)
 {
-	ft_printf("let's go !\n\n");
 	push_swap(argc, argv);
 	return (0);
 }

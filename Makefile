@@ -6,7 +6,7 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/05/11 12:16:47 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/05/11 18:07:07 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ NAME	= push_swap.a
 SRC		= push_swap.c\
 		  push_swap_utils.c\
 		  push_swap_utils2.c\
+		  push_swap_utils3.c\
 		  fct_lst_push_swap.c\
 		  push_swap_fct.c\
 		  push_swap_fct2.c
