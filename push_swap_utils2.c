@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:11:52 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/12 13:38:34 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:00:55 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,26 @@ int	ft_is_sorted(t_tablist *tl, char arg)
 	return (0);
 }
 
+int	ft_is_reversesorted(t_tablist *tl, char arg)
+{
+	int		i;
+	t_list	*tmp;
+
+	if (arg == 'a')
+		tmp = tl->la;
+	else if (arg == 'b')
+		tmp = tl->lb;
+	if (count_list(tl, arg) < 2)
+		return (0);
+	while (tmp->next)
+	{
+		if (tmp->content < tmp->next->content)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
 t_tablist	*ft_make_list(int len_list, char **nbr_char)
 {
 	t_tablist	*tl;
@@ -89,11 +109,7 @@ t_tablist	*ft_make_list(int len_list, char **nbr_char)
 	{
 		long_new_content = ft_atoli(nbr_char[i]);
 		if (long_new_content > 2147483647 || long_new_content < -2147483648)
-		//if (long_new_content > 9 || long_new_content < 0)
-		{
-			//free_list(tl);
 			return (tl);
-		}
 		new_content = (int)long_new_content;
 		tl->la = add_list(new_content, tl->la);
 		i--;

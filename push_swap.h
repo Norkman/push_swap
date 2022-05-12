@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/12 11:15:20 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:03:59 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_list	*fct_rotate_reverse(t_list *list);
 t_tablist	*ft_sort_three(t_tablist *tl);
 int	ft_check_error(int length, char **list);
 int	ft_is_sorted(t_tablist *tl, char arg);
+int	ft_is_reversesorted(t_tablist *tl, char arg);
 t_tablist	*ft_sort_under_five(t_tablist *tl);
 int	ft_isbigger(t_list *list);
 int	ft_check_double(t_tablist *tl);
@@ -49,5 +50,7 @@ t_tablist *ft_higher_up(t_tablist *tl, char arg);
 t_tablist *ft_lower_up(t_tablist *tl, char arg);
 int ft_findhigher(t_tablist *tl, char arg);
 int ft_findlower(t_tablist *tl, char arg);
+t_tablist	*ft_sort_under_hundred(t_tablist *tl);
+t_tablist	*ft_putinlb(t_tablist *tl);
 
 #endif
