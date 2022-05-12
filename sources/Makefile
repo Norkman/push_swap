@@ -6,7 +6,7 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/04/05 14:53:27 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/05/12 10:18:19 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRC		= ft_bzero.c\
           ft_memcmp.c\
           ft_strnstr.c\
           ft_atoi.c\
+		  ft_atoli.c\
           ft_calloc.c\
           ft_strdup.c\
           ft_substr.c\

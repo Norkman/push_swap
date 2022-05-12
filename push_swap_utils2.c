@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:11:52 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/11 18:06:50 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:27:12 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int	ft_check_error(int length, char **list)
 	return (0);
 }
 
-int	ft_check_double(t_list *list)
+int	ft_check_double(t_tablist *tl)
 {
 	t_list	*tmpi;
 	t_list	*tmpj;
 
-	tmpi = list;
+	tmpi = tl->la;
 	while (tmpi->next)
 	{
 		tmpj = tmpi->next;
@@ -53,39 +53,52 @@ int	ft_check_double(t_list *list)
 	return (0);
 }
 
-int	ft_is_sorted(t_list *list)
+int	ft_is_sorted(t_tablist *tl, char arg)
 {
 	int		i;
 	t_list	*tmp;
 
-	tmp = list;
-	if (count_list(tmp) < 2)
+	if (arg == 'a')
+		tmp = tl->la;
+	else if (arg == 'b')
+		tmp = tl->lb;
+	if (count_list(tl, arg) < 2)
 		return (0);
-	while (list->next)
+	while (tmp->next)
 	{
-		if (list->content > list->next->content)
+		if (tmp->content > tmp->next->content)
 			return (1);
-		list = list->next;
+		tmp = tmp->next;
 	}
 	return (0);
 }
 
-t_list *ft_make_list(int len_list, char **nbr_char)
+t_tablist	*ft_make_list(int len_list, char **nbr_char)
 {
-	t_list	*list;
-	int		new_content;
-	int		i;
+	t_tablist	*tl;
+	long int	long_new_content;
+	int			new_content;
+	int			i;
 
-	list = NULL;
+	tl = malloc(sizeof(*tl));
+	tl->la = NULL;
+	tl->lb = NULL;
 	if (ft_check_error(len_list, nbr_char) == 1)
 		return (NULL);
 	i = len_list - 1;
 	while (i >= 1)
 	{
-		new_content = ft_atoi(nbr_char[i]);
-		list = add_list(new_content, list);
+		long_new_content = ft_atoli(nbr_char[i]);
+		//printf("---- %ld\n", long_new_content);
+		if (long_new_content > 2147483647 || long_new_content < -2147483648)
+		{
+			free_list(tl);
+			return (NULL);
+		}
+		new_content = (int)long_new_content;
+		tl->la = add_list(new_content, tl->la);
 		i--;
 	}
-	return (list);
+	return (tl);
 }
 

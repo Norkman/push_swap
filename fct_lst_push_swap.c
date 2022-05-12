@@ -6,16 +6,16 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 12:02:25 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/04/21 13:17:16 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 08:26:44 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Add a new element to linked list */
 t_list	*add_list(int num, t_list *head)
 {
     t_list *tmp;
+
     tmp = (t_list *) malloc(sizeof(t_list));
     tmp->content = num;
     tmp->next = head;
@@ -23,10 +23,10 @@ t_list	*add_list(int num, t_list *head)
 	return (head);
 }
 
-/* Print all the elements in the linked list */
 void	printf_list(t_list *head)
 {
     t_list *tmp;
+
 	tmp = head;
    	while (tmp != NULL)
 	{
@@ -36,29 +36,32 @@ void	printf_list(t_list *head)
 	ft_printf("\n");
 }
 
-/* Count the number of list in a linked list */
-int	count_list(t_list *head)
+int	count_list(t_tablist *tl, char arg)
 {
-    int cnt = 0;
-    t_list *tmp; 
-	tmp = head;
-    while ( tmp != NULL)
+    int cnt;
+    t_list *tmp;
+
+	cnt = 0;
+	if (arg == 'a')
+		tmp = tl->la;
+	else if (arg == 'b')
+		tmp = tl->lb;
+    while (tmp != NULL)
 	{
         cnt++;
         tmp = tmp->next;
     }
 	return(cnt);
 }
-
-/* Remove the first element from a linked list */
+/*
 t_list	*remove_list(int num, t_list *head)
 {
     t_list *tmp = head;
-	head = NULL;
 
+	head = NULL;
 	return(head);
 }
-
+*/
 void	free_list(t_tablist *tl)
 {
 	t_list *tmp;

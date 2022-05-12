@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:50:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/04/21 17:49:15 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 08:42:33 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ t_list	*fct_swap(t_list *list)
 
 t_tablist	*fct_swap_arg(t_tablist *tl, char arg)
 {
-	if (arg == 'a' && count_list(tl->la) > 1)
+	if (arg == 'a' && count_list(tl, 'a') > 1)
 		tl->la = fct_swap(tl->la);
-	if (arg == 'b' && count_list(tl->lb) > 1)
+	if (arg == 'b' && count_list(tl, 'b') > 1)
 		tl->lb = fct_swap(tl->lb);
-	if (arg == 's' && count_list(tl->la) > 1 && count_list(tl->lb) > 1)
+	if (arg == 's' && count_list(tl, 'a') > 1 && count_list(tl, 'b') > 1)
 	{
 		tl->la = fct_swap(tl->la);
 		tl->lb = fct_swap(tl->lb);
@@ -60,9 +60,9 @@ t_tablist	*fct_push(t_tablist *tl, char c)
 
 t_tablist	*fct_push_arg(t_tablist *tl, char arg)
 {
-	if (arg == 'a' && count_list(tl->lb) > 0)
+	if (arg == 'a' && count_list(tl, 'b') > 0)
 		tl = fct_push(tl, 'a');
-	if (arg == 'b' && count_list(tl->la) > 0)
+	if (arg == 'b' && count_list(tl, 'a') > 0)
 		tl = fct_push(tl, 'b');
 	ft_printf("p%c\n", arg);
 	return (tl);

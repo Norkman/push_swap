@@ -6,19 +6,67 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:05:57 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/11 18:57:37 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 08:57:37 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_findhigher(t_list *list)
+int	ft_findpos(t_tablist *tl, char arg, int nbr)
+{
+	int	pos;
+	t_list	*tmp;
+
+	if (arg == 'a')
+		tmp = tl->la;
+	else if (arg == 'b')
+		tmp = tl->lb;
+	pos = 0;
+	while (tmp)
+	{
+		if (tmp->content == nbr)
+			return (pos);
+		pos++;
+		tmp = tmp->next;
+	}
+	return (pos);
+}
+
+int ft_findlower(t_tablist *tl, char arg)
 {
 	t_list	*tmpi;
 	t_list	*tmpj;
 	int	nbr;
 
-	tmpi = list;
+	if (arg == 'a')
+		tmpi = tl->la;
+	if (arg == 'b')
+		tmpi = tl->lb;
+	nbr = tmpi->content;
+	while (tmpi->next)
+	{
+		tmpj = tmpi->next;
+		while (tmpj)
+		{
+			if (nbr > tmpj->content)
+				nbr = tmpj->content;
+			tmpj = tmpj->next;
+		}
+		tmpi = tmpi->next;
+	}
+	return (nbr);
+}
+
+int ft_findhigher(t_tablist *tl, char arg)
+{
+	t_list	*tmpi;
+	t_list	*tmpj;
+	int	nbr;
+
+	if (arg == 'a')
+		tmpi = tl->la;
+	if (arg == 'b')
+		tmpi = tl->lb;
 	nbr = tmpi->content;
 	while (tmpi->next)
 	{
@@ -34,49 +82,48 @@ int ft_findhigher(t_list *list)
 	return (nbr);
 }
 
-int	ft_findpos(t_list *list, int nbr)
+t_tablist *ft_lower_up(t_tablist *tl, char arg)
 {
-	int	pos;
-	t_list	*tmp;
-
-	tmp = list;
-	pos = 0;
-	while (list)
-	{
-		if (tmp->content == nbr)
-			return (pos);
-		pos++;
-		tmp = tmp->next;
-	}
-	return (pos);
-}
-
-t_list *ft_higher_up(t_list *list)
-{
-	int		nbr;
-	int		len;
 	int		pos;
-	t_list	*tmp;
+	int		len;
 
-	tmp = list;
-	len = count_list(list);
-	nbr = ft_findhigher(list);
-	pos = ft_findpos(list, nbr);
+	if (arg == 'a')
+		len = count_list(tl, 'a');
+	else if (arg == 'b')
+		len = count_list(tl, 'a');
+	pos = ft_findpos(tl, arg, ft_findlower(tl, arg));
 	if (pos <= len - pos)
 	{
-		while (pos > 0)
-		{
-			list = fct_rotate(list);
-			pos--;
-		}
+		while (pos-- > 0)
+			tl = fct_rotate_arg(tl, arg);
 	}
 	else
 	{
-		while (pos < len)
-		{
-			list = fct_rotate_reverse(list);
-			pos ++;
-		}
+		while (pos++ < len)
+			tl = fct_rotate_reverse_arg(tl, arg);
 	}
-	return (list);
+	return (tl);
+}
+
+t_tablist *ft_higher_up(t_tablist *tl, char arg)
+{
+	int		pos;
+	int		len;
+
+	if (arg == 'a')
+		len = count_list(tl, 'a');
+	else if (arg == 'b')
+		len = count_list(tl, 'a');
+	pos = ft_findpos(tl, arg, ft_findhigher(tl, arg));
+	if (pos <= len - pos)
+	{
+		while (pos-- > 0)
+			tl = fct_rotate_arg(tl, arg);
+	}
+	else
+	{
+		while (pos++ < len)
+			tl = fct_rotate_reverse_arg(tl, arg);
+	}
+	return (tl);
 }

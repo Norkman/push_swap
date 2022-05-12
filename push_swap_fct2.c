@@ -6,7 +6,7 @@
 /*   By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:40:42 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/05 11:40:47 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 08:45:44 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ t_list	*fct_rotate(t_list *list)
 
 t_tablist	*fct_rotate_arg(t_tablist *tl, char arg)
 {
-	if (arg == 'a' && count_list(tl->la) > 1)
+	if (arg == 'a' && count_list(tl, 'a') > 1)
 		tl->la = fct_rotate(tl->la);
-	if (arg == 'b' && count_list(tl->lb) > 1)
+	if (arg == 'b' && count_list(tl, 'b') > 1)
 		tl->lb = fct_rotate(tl->lb);
-	if (arg == 'r' && count_list(tl->lb) > 1 && count_list(tl->la))
+	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'b'))
 	{
 		tl->la = fct_rotate(tl->la);
 		tl->lb = fct_rotate(tl->lb);
@@ -56,11 +56,11 @@ t_list	*fct_rotate_reverse(t_list *list)
 
 t_tablist	*fct_rotate_reverse_arg(t_tablist *tl, char arg)
 {
-	if (arg == 'a' && count_list(tl->la) > 1)
+	if (arg == 'a' && count_list(tl, 'a') > 1)
 		tl->la = fct_rotate_reverse(tl->la);
-	if (arg == 'b' && count_list(tl->lb) > 1)
+	if (arg == 'b' && count_list(tl, 'b') > 1)
 		tl->lb = fct_rotate_reverse(tl->lb);
-	if (arg == 'r' && count_list(tl->lb) > 1 && count_list(tl->la))
+	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'a'))
 	{
 		tl->la = fct_rotate_reverse(tl->la);
 		tl->lb = fct_rotate_reverse(tl->lb);

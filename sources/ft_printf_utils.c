@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:27:19 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/04/05 15:40:15 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 10:16:26 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,6 @@ int	fct_p(va_list args)
 	long				len_nbr;
 
 	int_v = va_arg(args, unsigned long long);
-	/*
-	if (int_v == -1)
-	{
-		ft_putstr_fd("0x", 1);
-		ft_putstr_fd("ffffffffffffffff", 1);
-		return (16 + 2);
-	}
-	*/
 	if (int_v == 0)
 	{
 		ft_putstr_fd("(nil)", 1);
