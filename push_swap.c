@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:55:50 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/12 11:28:11 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:40:16 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	push_swap(int argc, char **argv)
 	char **list_fct;
 
 	tl = ft_make_list(argc, argv);
-	printf_list(tl->la);
-	if (tl == NULL || ft_check_double(tl) == 1)
+	if (ft_check_error(argc, argv) == 1 || ft_check_double(tl) 
+		|| argc - 1 != count_list(tl, 'a'))
 	{
 		ft_printf("Error\n");
 		free_list(tl);

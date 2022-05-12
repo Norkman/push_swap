@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:11:52 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/12 11:27:12 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:38:34 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_check_error(int length, char **list)
 		j = 0;
 		while (j < ft_strlen(list[i]))
 		{
-			if (ft_isdigit(list[i][j]) == 0 && list[i][j] != '-'
+			if (ft_isdigit(list[i][j] == 0)
+				||ft_isdigit(list[i][j]) == 0 && list[i][j] != '-'
 				|| list[i][j] == '-' && ft_isdigit(list[i][j + 1]) == 0)
 				return (1);
 			j++;
@@ -83,17 +84,15 @@ t_tablist	*ft_make_list(int len_list, char **nbr_char)
 	tl = malloc(sizeof(*tl));
 	tl->la = NULL;
 	tl->lb = NULL;
-	if (ft_check_error(len_list, nbr_char) == 1)
-		return (NULL);
 	i = len_list - 1;
 	while (i >= 1)
 	{
 		long_new_content = ft_atoli(nbr_char[i]);
-		//printf("---- %ld\n", long_new_content);
 		if (long_new_content > 2147483647 || long_new_content < -2147483648)
+		//if (long_new_content > 9 || long_new_content < 0)
 		{
-			free_list(tl);
-			return (NULL);
+			//free_list(tl);
+			return (tl);
 		}
 		new_content = (int)long_new_content;
 		tl->la = add_list(new_content, tl->la);
