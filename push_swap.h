@@ -50,7 +50,11 @@ t_tablist *ft_higher_up(t_tablist *tl, char arg);
 t_tablist *ft_lower_up(t_tablist *tl, char arg);
 int ft_findhigher(t_tablist *tl, char arg);
 int ft_findlower(t_tablist *tl, char arg);
-t_tablist	*ft_sort_under_hundred(t_tablist *tl);
+t_tablist	*ft_sort_under_seventy(t_tablist *tl);
 t_tablist	*ft_putinlb(t_tablist *tl);
+t_tablist	*ft_choicerotate(t_tablist *tl, int costh, int costl);
+int	ft_med_list(t_tablist *tl);
+t_tablist	*ft_sort_under_fivehundred(t_tablist *tl);
+int	ft_howmanyover(t_list *list, int nbr);
 
 #endif

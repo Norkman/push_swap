@@ -20,10 +20,11 @@ endif
 NAME	= push_swap.a
 
 SRC		= push_swap.c\
+		  sort_fct.c\
 		  push_swap_utils.c\
-		  push_swap_utils2.c\
-		  push_swap_utils3.c\
-		  push_swap_utils4.c\
+		  make_list.c\
+		  cost_fct.c\
+		  big_sort_fct.c\
 		  fct_lst_push_swap.c\
 		  push_swap_fct.c\
 		  push_swap_fct2.c

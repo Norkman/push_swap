@@ -113,7 +113,7 @@ t_tablist *ft_higher_up(t_tablist *tl, char arg)
 	if (arg == 'a')
 		len = count_list(tl, 'a');
 	else if (arg == 'b')
-		len = count_list(tl, 'a');
+		len = count_list(tl, 'b');
 	pos = ft_findpos(tl, arg, ft_findhigher(tl, arg));
 	if (pos <= len - pos)
 	{

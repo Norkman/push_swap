@@ -27,8 +27,8 @@ int	push_swap(int argc, char **argv)
 		free_list(tl);
 		return (0);
 	}
-	ft_printf("\n%d\n", ft_is_sorted(tl, 'a'));
-	printf_list(tl->la);
+	//ft_printf("\n%d\n", ft_is_sorted(tl, 'a'));
+	//printf_list(tl->la);
 	if (count_list(tl, 'a') == 1)
 		return(0);
 	if (count_list(tl, 'a') == 2 && ft_is_sorted(tl, 'a') == 1)
@@ -37,10 +37,13 @@ int	push_swap(int argc, char **argv)
 		tl = ft_sort_three(tl);
 	else if (count_list(tl, 'a') <= 5)
 		tl = ft_sort_under_five(tl);
-	else if (count_list(tl,'a') <= 100)
-		tl = ft_sort_under_hundred(tl);
+	else if (count_list(tl,'a') <= 70)
+		tl = ft_sort_under_seventy(tl);
+	else if (count_list(tl,'a') <= 500)
+		tl = ft_sort_under_fivehundred(tl);
+	ft_printf("\n%d\n", ft_med_list(tl));
 	ft_printf("\n%d\n", ft_is_sorted(tl, 'a'));
-	printf_list(tl->lb);
+	printf_list(tl->la);
 	free_list(tl);
 	return (0);
 }

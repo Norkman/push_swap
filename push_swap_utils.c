@@ -1,70 +1,61 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 15:14:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/12 16:04:36 by nle-bret         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
-t_tablist	*ft_sort_three(t_tablist *tl)
+int	ft_howmanyover(t_list *list, int nbr)
 {
-	char	*list_fct;
-	
-	while (tl && count_list(tl, 'a') == 3)
+	t_list	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = list;
+	while (tmp)
 	{
-		if (tl->la->content < tl->la->next->content 
-				&& tl->la->next->content < tl->la->next->next->content)
-			return (tl);
-		if (tl->la->content > tl->la->next->content 
-				&& tl->la->next->content < tl->la->next->next->content
-				&& tl->la->content > tl->la->next->next->content)
-			tl = fct_rotate_arg(tl, 'a');
-		if (tl->la->content > tl->la->next->content 
-				&& tl->la->next->content < tl->la->next->next->content)
-			tl = fct_swap_arg(tl, 'a');
-		if (tl->la->content > tl->la->next->content 
-				&& tl->la->next->content > tl->la->next->next->content)
-			tl = fct_rotate_arg(tl, 'a');
-		if (tl->la->content < tl->la->next->content 
-				&& tl->la->next->content > tl->la->next->next->content)
-			tl = fct_rotate_reverse_arg(tl, 'a');
+		if (nbr < tmp->content)
+			i++;
+		tmp = tmp->next;
 	}
-	return (tl);
+	return (i);
 }
 
-t_tablist	*ft_sort_under_five(t_tablist *tl)
+int	ft_med_list(t_tablist *tl)
 {
-	int 	len_la;
+	int		nbr;
+	int		len;
+	t_list	*tmp;
 
-	if (ft_is_sorted(tl, 'a') == 0)
-		exit(0);
-	len_la = count_list(tl, 'a');
-	tl = ft_lower_up(tl, 'a');
-	tl = fct_push_arg(tl, 'b');
-	if (len_la == 5)
+	len = count_list(tl, 'a');
+	tmp = tl->la;
+	while (tmp)
 	{
-		tl = ft_higher_up(tl, 'a');
-		tl = fct_push_arg(tl, 'b');
+		nbr = tmp->content;
+		printf("-%d --> %d\n", nbr, ft_howmanyover(tl->la, nbr));
+			if (ft_howmanyover(tl->la, nbr) == len / 2
+				|| ft_howmanyover(tl->la, nbr) == len / 2)
+			{
+				return (nbr);
+			}
+		tmp = tmp->next;
 	}
-	tl = ft_sort_three(tl);
-	if (len_la == 5)
+	/*
+	i = 0;
+	head = tl->la;
+	tmpi = head;
+	tmpj = head;
+	while(tmpi)
 	{
-		tl = fct_push_arg(tl, 'a');
-		tl = fct_rotate_arg(tl, 'a');
+		nbr = tmpi->content;
+		printf("-- %d",nbr);
+		while (tmpj)
+		{
+			if (nbr > tmpj->content)
+				i++;
+			printf(" --> %d\n", i);
+			tmpj = tmpj->next;
+		}
+		if (i == count_list(tl, 'a') / 2)
+				return(nbr);
+		tmpj = head;
+		tmpi = tmpi->next;
 	}
-	tl = fct_push_arg(tl, 'a');
-	return (tl);
-}
-
-t_tablist	*ft_sort_under_hundred(t_tablist *tl)
-{
-	while (count_list(tl, 'a') > 0)
-		ft_putinlb(tl);
-	return (tl);
+	*/
+	return (0);
 }
