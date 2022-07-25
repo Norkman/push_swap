@@ -6,6 +6,7 @@ int	ft_howmanyover(t_list *list, int nbr)
 	int		i;
 
 	i = 0;
+
 	tmp = list;
 	while (tmp)
 	{
@@ -27,7 +28,7 @@ int	ft_med_list(t_tablist *tl)
 	while (tmp)
 	{
 		nbr = tmp->content;
-		printf("-%d --> %d\n", nbr, ft_howmanyover(tl->la, nbr));
+		printf("num : %d --> %d\n", nbr, ft_howmanyover(tl->la, nbr));
 			if (ft_howmanyover(tl->la, nbr) == len / 2
 				|| ft_howmanyover(tl->la, nbr) == len / 2)
 			{

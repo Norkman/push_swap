@@ -6,18 +6,18 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/05/12 16:05:32 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/07/25 15:15:59 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 
 DEBUG	?= 0
 ifeq ($(DEBUG), 1)
     CFLAGS += -g3 -fsanitize=address
 endif
 
-NAME	= push_swap.a
+NAME	= push_swap
 
 SRC		= push_swap.c\
 		  sort_fct.c\
@@ -27,7 +27,8 @@ SRC		= push_swap.c\
 		  big_sort_fct.c\
 		  fct_lst_push_swap.c\
 		  push_swap_fct.c\
-		  push_swap_fct2.c
+		  push_swap_fct2.c\
+		  main.c
 #		  ft_printf.c\
 #		  ft_printf_utils.c\
 #		  ft_printf_utils2.c\
@@ -39,10 +40,13 @@ CC		= gcc
 
 ${NAME}: ${OBJS}
 	cd sources && $(MAKE)
-	cp sources/libft.a $(NAME)
-	ar -rcs $(NAME) $(OBJS)
+	cp sources/libft.a .
+	${CC} ${FLAGS} -o ${NAME} ${OBJS} libft.a
 
 all: ${NAME}
+
+%.o: %.c
+	$(CC) -c $(FLAGS) -Isources/ $< -o $@
 
 clean:
 	rm -f ${OBJS}
@@ -54,8 +58,5 @@ fclean:	clean
 	$(MAKE) fclean -C ./sources 
 
 re:	fclean all
-
-%.o: %.c
-	$(CC) $(FLAGS) -I push_swap.h -c $<  -o $(<:.c=.o)
 
 .PHONY: all clean fclean re
