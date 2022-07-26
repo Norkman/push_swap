@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:14:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/25 15:39:26 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/07/26 12:35:47 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	int	med;
 
 	med = ft_med_list(tl);
+	
 	return(tl);
 }

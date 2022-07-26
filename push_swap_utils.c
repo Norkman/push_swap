@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/26 09:48:28 by nle-bret          #+#    #+#             */
+/*   Updated: 2022/07/26 12:57:28 by nle-bret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_howmanyover(t_list *list, int nbr)
@@ -28,35 +40,10 @@ int	ft_med_list(t_tablist *tl)
 	while (tmp)
 	{
 		nbr = tmp->content;
-		printf("num : %d --> %d\n", nbr, ft_howmanyover(tl->la, nbr));
-			if (ft_howmanyover(tl->la, nbr) == len / 2
-				|| ft_howmanyover(tl->la, nbr) == len / 2)
-			{
+		//printf("num : %d --> %d\n", nbr, ft_howmanyover(tl->la, nbr));
+			if (ft_howmanyover(tl->la, nbr) == len / 2)
 				return (nbr);
-			}
 		tmp = tmp->next;
 	}
-	/*
-	i = 0;
-	head = tl->la;
-	tmpi = head;
-	tmpj = head;
-	while(tmpi)
-	{
-		nbr = tmpi->content;
-		printf("-- %d",nbr);
-		while (tmpj)
-		{
-			if (nbr > tmpj->content)
-				i++;
-			printf(" --> %d\n", i);
-			tmpj = tmpj->next;
-		}
-		if (i == count_list(tl, 'a') / 2)
-				return(nbr);
-		tmpj = head;
-		tmpi = tmpi->next;
-	}
-	*/
 	return (0);
 }
