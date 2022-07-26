@@ -56,5 +56,9 @@ t_tablist	*ft_choicerotate(t_tablist *tl, int costh, int costl);
 int	ft_med_list(t_tablist *tl);
 t_tablist	*ft_sort_under_fivehundred(t_tablist *tl);
 int	ft_howmanyover(t_list *list, int nbr);
-
+t_tablist	*ft_putbox(t_tablist *tl, int box);
+t_tablist	*ft_putnbrofbox(t_tablist *tl, int box);
+int	ft_findcostdown(t_tablist *tl, int box, int len);
+int	ft_findcostup(t_tablist	*tl, int box, int len);
+t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown);
 #endif

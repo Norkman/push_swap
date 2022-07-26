@@ -47,3 +47,18 @@ int	ft_med_list(t_tablist *tl)
 	}
 	return (0);
 }
+
+t_tablist	*ft_putbox(t_tablist *tl, int box)
+{
+	int		i;
+	t_list	*tmp;
+
+	tmp = tl->la;
+	i = 1;
+	while (i <= box)
+	{
+		tl = ft_putnbrofbox(tl, box);
+		i++;
+	}
+	return (tl);
+}

@@ -49,3 +49,22 @@ t_tablist	*ft_putinlb(t_tablist *tl)
 	tl = ft_choicerotate(tl, costh, costl);
 	return (tl);
 }
+
+t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
+{
+	int	costup;
+	int costdown;
+	int	len_la;
+	int	i;
+
+	i = 0;
+	len_la = count_list(tl, 'a');
+	while (i < len_la)
+	{
+		costup = ft_findcostup(tl, box, len_la);
+		costdown = ft_findcostdown(tl, box, len_la);
+		tl = ft_rotatelesscost(tl, costup, costdown);
+		i++;
+	}
+	return (tl);
+}

@@ -42,9 +42,9 @@ int	push_swap(int argc, char **argv)
 	else if (count_list(tl,'a') <= 500)
 		//tl = ft_sort_under_seventy(tl);
 		tl = ft_sort_under_fivehundred(tl);
-	//ft_printf("\n%d", ft_med_list(tl));
+	//ft_printf("\n%d\n", ft_med_list(tl));
 	//ft_printf("\n%d\n", ft_is_sorted(tl, 'a'));
-	//printf_list(tl->la);
+	printf_list(tl->lb);
 	free_list(tl);
 	return (0);
 }

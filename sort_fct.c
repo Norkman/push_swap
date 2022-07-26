@@ -75,8 +75,15 @@ t_tablist	*ft_sort_under_seventy(t_tablist *tl)
 t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 {
 	int	med;
+	int box;
+
+	box = 10;
+	tl = ft_putbox(tl, 10);
 
 	med = ft_med_list(tl);
-	
+	//min = ft_findlower(tl, 'a')
+	//len_a = count_list(tl, 'a');
+	//while (count_list(tl, 'a') > len_a)
+	//	tl = ft_putinlb(tl);
 	return(tl);
 }

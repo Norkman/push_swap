@@ -28,11 +28,8 @@ SRC		= push_swap.c\
 		  fct_lst_push_swap.c\
 		  push_swap_fct.c\
 		  push_swap_fct2.c\
-		  main.c
-#		  ft_printf.c\
-#		  ft_printf_utils.c\
-#		  ft_printf_utils2.c\
-#		  push_swap_fct.c
+		  main.c\
+		  cost_fct2.c
 
 OBJS	= ${SRC:.c=.o}
 
