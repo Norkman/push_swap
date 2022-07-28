@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:14:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/26 12:35:47 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/07/28 15:17:51 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	int	med;
 	int box;
 
-	box = 10;
-	tl = ft_putbox(tl, 10);
+	box = 3;
+	tl = ft_putbox(tl, box);
 
 	med = ft_med_list(tl);
 	//min = ft_findlower(tl, 'a')

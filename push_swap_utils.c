@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:48:28 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/26 12:57:28 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/07/28 15:17:51 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ t_tablist	*ft_putbox(t_tablist *tl, int box)
 	t_list	*tmp;
 
 	tmp = tl->la;
-	i = 1;
-	while (i <= box)
+	i = box;
+	while (i > 0)
 	{
-		tl = ft_putnbrofbox(tl, box);
-		i++;
+		tl = ft_putnbrofbox(tl, box, i);
+		i--;
 	}
 	return (tl);
 }

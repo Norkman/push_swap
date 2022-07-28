@@ -1,16 +1,17 @@
 #include "push_swap.h"
 
-int	ft_findcostup(t_tablist	*tl, int box, int len)
+int	ft_findcostup(t_tablist	*tl, int rest_nbr_box)
 {
 	t_list	*tmp;
 	int		cost;
-	int	 nbr;
+	int		nbr;
+	int		nbr_over;
 
 	tmp = tl->la;
 	while (tmp)
 	{
 		nbr = tmp->content;
-		if (ft_howmanyover(tl->la, nbr) < len / box)
+		if (ft_howmanyover(tl->la, nbr) < rest_nbr_box)
 		{
 			cost = ft_findpos(tl, 'a', nbr);
 			break;
@@ -20,21 +21,21 @@ int	ft_findcostup(t_tablist	*tl, int box, int len)
 	return (cost);
 }
 
-int	ft_findcostdown(t_tablist *tl, int box, int len)
+int	ft_findcostdown(t_tablist *tl, int rest_nbr_box)
 {
 	t_list	*tmp;
-	int			cost;
-	int			nbr;
+	int		cost;
+	int		nbr;
 
 	tmp = tl->la;
 	while (tmp)
 	{
 		nbr = tmp->content;
-		if (ft_howmanyover(tl->la, nbr) < len / box)
+		if (ft_howmanyover(tl->la, nbr) < rest_nbr_box)
 			cost = ft_findpos(tl, 'a', nbr);
 		tmp = tmp->next;
 	}
-	return (len - cost);
+	return (count_list(tl, 'a') - cost);
 }
 
 t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown)
@@ -59,5 +60,6 @@ t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown)
 		}
 	}
 	tl = fct_push_arg(tl, 'b');
+	ft_printf("\nnum : %d\n", tl->lb->content);
 	return (tl);
 }
