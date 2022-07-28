@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:41:12 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/28 16:31:49 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/07/28 18:43:06 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,14 @@ t_tablist	*ft_putnbrofbox(t_tablist *tl, int box, int rest_box)
 		rest_nbr_box = count_list(tl, 'a') % (len_la / box);
 			if (rest_nbr_box == 0)
 				rest_nbr_box = len_la / box;
-		ft_printf("rest : %d -- nbr per box : %d\n", rest_nbr_box, len_la / box);
+			if (rest_nbr_box < (len_la / box) / 4)
+				rest_nbr_box = (len_la / box) / 4;
+		//ft_printf("rest : %d -- nbr per box : %d\n", rest_nbr_box, len_la / box);
 		costup = ft_findcostup(tl, rest_nbr_box);
 		costdown = ft_findcostdown(tl, rest_nbr_box);
 		tl = ft_rotatelesscost(tl, costup, costdown);
-		ft_printf("cost down : %d - cost up : %d\n", costdown, costup);
-		printf_list(tl->la);
+		//ft_printf("cost down : %d - cost up : %d\n", costdown, costup);
+		//printf_list(tl->la);
 		i++;
 	}
 	return (tl);

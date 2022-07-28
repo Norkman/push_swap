@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:55:50 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/28 13:26:54 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/07/28 18:24:49 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	push_swap(int argc, char **argv)
 		tl = ft_sort_under_fivehundred(tl);
 	//ft_printf("\n%d\n", ft_med_list(tl));
 	//ft_printf("\n%d\n", ft_is_sorted(tl, 'a'));
-	printf_list(tl->lb);
+	//printf_list(tl->la);
 	free_list(tl);
 	return (0);
 }

@@ -60,6 +60,6 @@ t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown)
 		}
 	}
 	tl = fct_push_arg(tl, 'b');
-	ft_printf("\nnum : %d\n", tl->lb->content);
+	//ft_printf("\nnum : %d\n", tl->lb->content);
 	return (tl);
 }
