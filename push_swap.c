@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:55:50 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/28 18:24:49 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/07/29 17:24:40 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	push_swap(int argc, char **argv)
 	//else if (count_list(tl,'a') <= 70)
 		//tl = ft_sort_under_seventy(tl);
 	else if (count_list(tl,'a') <= 500)
-		//tl = ft_sort_under_seventy(tl);
 		tl = ft_sort_under_fivehundred(tl);
 	//ft_printf("\n%d\n", ft_med_list(tl));
 	//ft_printf("\n%d\n", ft_is_sorted(tl, 'a'));
