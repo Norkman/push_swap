@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:14:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/29 17:49:55 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:27:29 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,14 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	int box;
 
 	box = 5;
-	tl = ft_putbox(tl, box);
+	tl = ft_putnbrofbox(tl, box);
 	//med = ft_med_list(tl);
+	
 	while (count_list(tl, 'b') > 0)
 	{
 		tl = ft_higher_up(tl, 'b');
 		tl = fct_push_arg(tl, 'a');	
 	}
+	
 	return(tl);
 }

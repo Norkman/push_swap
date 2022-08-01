@@ -6,11 +6,11 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/07/25 15:15:59 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/08/01 15:06:01 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 DEBUG	?= 0
 ifeq ($(DEBUG), 1)
@@ -29,7 +29,8 @@ SRC		= push_swap.c\
 		  push_swap_fct.c\
 		  push_swap_fct2.c\
 		  main.c\
-		  cost_fct2.c
+		  cost_fct2.c\
+		  cost_fct3.c
 
 OBJS	= ${SRC:.c=.o}
 

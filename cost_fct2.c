@@ -81,14 +81,27 @@ t_tablist	*ft_rotatedown(t_tablist *tl, int costdown, int poslowerlb)
 	}
 	return (tl);
 }
-t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown, int poslowerlb)
+t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown)
 {
+	int nbr_la;
+	int	poslowerlb;
+
 	if (costup <= costdown)
 	{
+		nbr_la = ft_findnbr(tl, 'a', costup);
+		//printf("costup in la : %d\n", costup);
+		//printf("nbr in la : %d\n", nbr_la);
+		poslowerlb = ft_findpos(tl, 'b', ft_findinferior(tl->lb, nbr_la));
+		//printf("nbr inferior in lb: %d - place in lb: %d\n", ft_findinferior(tl->lb, nbr_la), poslowerlb);
 		tl = ft_rotateup(tl, costup, poslowerlb);
 	}
 	if (costdown < costup)
 	{
+		nbr_la = ft_findnbr(tl, 'a', count_list(tl, 'a') - costdown);
+		//printf("costdown in la : %d\n", costdown);
+		//printf("nbr in la : %d\n", nbr_la);
+		poslowerlb = count_list(tl, 'b') - ft_findpos(tl, 'b', ft_findinferior(tl->lb, nbr_la));
+		//printf("nbr inferior in lb: %d - place in lb: %d\n", ft_findinferior(tl->lb, nbr_la), poslowerlb);
 		tl = ft_rotatedown(tl, costdown, poslowerlb);
 	}
 	tl = fct_push_arg(tl, 'b');

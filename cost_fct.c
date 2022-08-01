@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:05:57 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/29 17:00:22 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/01 14:31:13 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ t_tablist *ft_lower_up(t_tablist *tl, char arg)
 	if (arg == 'a')
 		len = count_list(tl, 'a');
 	else if (arg == 'b')
-		len = count_list(tl, 'a');
+		len = count_list(tl, 'b');
 	pos = ft_findpos(tl, arg, ft_findlower(tl, arg));
 	if (pos <= len - pos)
 	{

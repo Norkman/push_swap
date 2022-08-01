@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/29 16:16:13 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:34:49 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,12 @@ int	ft_med_list(t_tablist *tl);
 t_tablist	*ft_sort_under_fivehundred(t_tablist *tl);
 int	ft_howmanyover(t_list *list, int nbr);
 t_tablist	*ft_putbox(t_tablist *tl, int box);
-t_tablist	*ft_putnbrofbox(t_tablist *tl, int box, int rest_box);
+t_tablist	*ft_putnbrofbox(t_tablist *tl, int box);
 int	ft_findcostdown(t_tablist *tl, int rest_nbr_box);
 int	ft_findcostup(t_tablist	*tl, int rest_nbr_box);
-t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown, int poshigherlb);
-t_tablist	*ft_rotateup(t_tablist *tl, int costup, int posgherlb);
-t_tablist	*ft_rotateup(t_tablist *tl, int costup, int posgherlb);
+t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown);
+t_tablist	*ft_rotateup(t_tablist *tl, int costup, int poshigherlb);
+int	ft_findinferior(t_list *list, int nbr);
+int	ft_findnbr(t_tablist *tl, char arg, int pos);
+void    disp(t_list *head_a, t_list *head_b);
 #endif

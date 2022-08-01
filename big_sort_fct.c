@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:41:12 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/07/29 17:50:33 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:28:31 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ t_tablist	*ft_putinlb(t_tablist *tl)
 	int posl;
 
 	posl = ft_findpos(tl, 'a', ft_findlower(tl, 'a'));
+	printf("lower : %d - ", ft_findlower(tl, 'a'));
+	printf("higher : %d\n", ft_findhigher(tl, 'a'));
 	posh = ft_findpos(tl, 'a', ft_findhigher(tl, 'a'));
 
 	if (posl <= count_list(tl, 'a') - posl)
@@ -50,33 +52,30 @@ t_tablist	*ft_putinlb(t_tablist *tl)
 	return (tl);
 }
 
-t_tablist	*ft_putnbrofbox(t_tablist *tl, int box, int rest_box)
+t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
 {
 	int	costup;
 	int costdown;
 	int	len_la;
 	int rest_nbr_box;
-	int poslowerlb;
 
 	len_la = count_list(tl, 'a');
 	while (count_list(tl, 'a') != 0)
+	//while (count_list(tl, 'b') < 15)
 	{
 		rest_nbr_box = count_list(tl, 'a') % (len_la / box);
+		//rest_nbr_box = len_la / box;
 			if (rest_nbr_box == 0)
 				rest_nbr_box = len_la / box;
 			if (rest_nbr_box < (len_la / box) / 4)
 				rest_nbr_box = (len_la / box) / 4;
 		costup = ft_findcostup(tl, rest_nbr_box);
 		costdown = ft_findcostdown(tl, rest_nbr_box);
-		if (count_list(tl, 'b') == 0)
-			poslowerlb = 0;
-		else
-			//poslowerlb = 0;
-			poslowerlb = ft_findpos(tl, 'b', ft_findlower(tl, 'b'));
 		//printf_list(tl->la);
+		//printf_list(tl->lb);
 		//ft_printf("rest : %d -- nbr per box : %d\n", rest_nbr_box, len_la / box);
 		//ft_printf("cost down : %d - cost up : %d - cost up for lb : %d\n", costdown, costup, poslowerlb);
-		tl = ft_rotatelesscost(tl, costup, costdown, poslowerlb);
+		tl = ft_rotatelesscost(tl, costup, costdown);
 		//ft_printf("num : %d\n", tl->lb->content);
 	}
 	return (tl);
