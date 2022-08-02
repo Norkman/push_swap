@@ -6,7 +6,7 @@
 /*   By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:40:42 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/05/12 08:45:44 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/02 12:39:40 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_tablist	*fct_rotate_arg(t_tablist *tl, char arg)
 		tl->la = fct_rotate(tl->la);
 	if (arg == 'b' && count_list(tl, 'b') > 1)
 		tl->lb = fct_rotate(tl->lb);
-	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'b'))
+	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'a'))
 	{
 		tl->la = fct_rotate(tl->la);
 		tl->lb = fct_rotate(tl->lb);

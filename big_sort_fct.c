@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:41:12 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/01 17:28:31 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:28:39 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,23 @@ t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
 	int rest_nbr_box;
 
 	len_la = count_list(tl, 'a');
-	while (count_list(tl, 'a') != 0)
-	//while (count_list(tl, 'b') < 15)
+	//while (count_list(tl, 'a') != 0)
+	while (count_list(tl, 'b') < 20)
 	{
 		rest_nbr_box = count_list(tl, 'a') % (len_la / box);
 		//rest_nbr_box = len_la / box;
-			if (rest_nbr_box == 0)
-				rest_nbr_box = len_la / box;
-			if (rest_nbr_box < (len_la / box) / 4)
-				rest_nbr_box = (len_la / box) / 4;
+		if (rest_nbr_box == 0)
+			rest_nbr_box = len_la / box;
+		/*
+			if (rest_nbr_box < (len_la / box) / 5)
+				rest_nbr_box = (len_la / box) / 5;
+		*/
 		costup = ft_findcostup(tl, rest_nbr_box);
 		costdown = ft_findcostdown(tl, rest_nbr_box);
-		//printf_list(tl->la);
-		//printf_list(tl->lb);
+		printf_list(tl->la);
+		printf_list(tl->lb);
 		//ft_printf("rest : %d -- nbr per box : %d\n", rest_nbr_box, len_la / box);
-		//ft_printf("cost down : %d - cost up : %d - cost up for lb : %d\n", costdown, costup, poslowerlb);
+		//ft_printf("cost down : %d - cost up : %d\n", costdown, costup);
 		tl = ft_rotatelesscost(tl, costup, costdown);
 		//ft_printf("num : %d\n", tl->lb->content);
 	}
