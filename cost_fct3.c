@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 14:12:00 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/01 17:26:30 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:00:16 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -37,6 +37,7 @@ int	ft_findinferior(t_list *list, int nbr)
 
 	i = 0;
 	tmp = list;
+	nbr_ret = NULL;
 	while (tmp)
 	{
 		num = tmp->content;

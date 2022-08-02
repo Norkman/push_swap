@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:28:52 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/02 16:38:41 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:28:12 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,8 +182,8 @@ t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown)
 		if (count_list(tl, 'b') < 2)
 			poslowerlb = 0;
 		else
-			ft_findpos(tl, 'b', ft_findinferior(tl->lb, nbr_la));
-		printf("nbr inferior in lb: %d - place in lb: %d\n", ft_findinferior(tl->lb, nbr_la), poslowerlb);
+			poslowerlb = ft_findpos(tl, 'b', ft_findinferior(tl->lb, nbr_la));
+		//printf("nbr inferior in lb: %d - place in lb: %d\n", ft_findinferior(tl->lb, nbr_la), poslowerlb);
 		tl = ft_rotateup(tl, costup, poslowerlb);
 	}
 	if (costdown < costup)
@@ -195,7 +195,7 @@ t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown)
 			poslowerlb = 0;
 		else
 			poslowerlb = ft_findpos(tl, 'b', ft_findinferior(tl->lb, nbr_la));
-		printf("nbr inferior in lb: %d - place in lb: %d\n", ft_findinferior(tl->lb, nbr_la), poslowerlb);
+		//printf("nbr inferior in lb: %d - place in lb: %d\n", ft_findinferior(tl->lb, nbr_la), poslowerlb);
 		tl = ft_rotatedown(tl, costdown, poslowerlb);
 	}
 	tl = fct_push_arg(tl, 'b');
