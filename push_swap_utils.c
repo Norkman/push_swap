@@ -6,13 +6,13 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:48:28 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/01 15:42:44 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:32:10 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_howmanyover(t_list *list, int nbr)
+int	ft_howmanyunder(t_list *list, int nbr)
 {
 	t_list	*tmp;
 	int		i;
@@ -22,7 +22,7 @@ int	ft_howmanyover(t_list *list, int nbr)
 	tmp = list;
 	while (tmp)
 	{
-		if (nbr < tmp->content)
+		if (nbr > tmp->content)
 			i++;
 		tmp = tmp->next;
 	}
@@ -41,7 +41,7 @@ int	ft_med_list(t_tablist *tl)
 	{
 		nbr = tmp->content;
 		//printf("num : %d --> %d\n", nbr, ft_howmanyover(tl->la, nbr));
-			if (ft_howmanyover(tl->la, nbr) == len / 2)
+			if (ft_howmanyunder(tl->la, nbr) == len / 2)
 				return (nbr);
 		tmp = tmp->next;
 	}

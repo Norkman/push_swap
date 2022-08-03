@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/01 17:34:49 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:30:44 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_tablist	*ft_putinlb(t_tablist *tl);
 t_tablist	*ft_choicerotate(t_tablist *tl, int costh, int costl);
 int	ft_med_list(t_tablist *tl);
 t_tablist	*ft_sort_under_fivehundred(t_tablist *tl);
-int	ft_howmanyover(t_list *list, int nbr);
+int	ft_howmanyunder(t_list *list, int nbr);
 t_tablist	*ft_putbox(t_tablist *tl, int box);
 t_tablist	*ft_putnbrofbox(t_tablist *tl, int box);
 int	ft_findcostdown(t_tablist *tl, int rest_nbr_box);

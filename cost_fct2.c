@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:28:52 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/02 18:28:12 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:30:32 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ int	ft_findcostup(t_tablist	*tl, int rest_nbr_box)
 	t_list	*tmp;
 	int		cost;
 	int		nbr;
-	int		nbr_over;
 
 	tmp = tl->la;
 	while (tmp)
 	{
 		nbr = tmp->content;
-		if (ft_howmanyover(tl->la, nbr) <= rest_nbr_box)
+		if (ft_howmanyunder(tl->la, nbr) <= rest_nbr_box)
 		{
 			cost = ft_findpos(tl, 'a', nbr);
 			return (cost);
@@ -43,7 +42,7 @@ int	ft_findcostdown(t_tablist *tl, int rest_nbr_box)
 	while (tmp)
 	{
 		nbr = tmp->content;
-		if (ft_howmanyover(tl->la, nbr) <= rest_nbr_box)
+		if (ft_howmanyunder(tl->la, nbr) <= rest_nbr_box)
 			cost = ft_findpos(tl, 'a', nbr);
 		tmp = tmp->next;
 	}
