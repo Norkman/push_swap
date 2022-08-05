@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/03 17:30:44 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/05 15:07:17 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	ft_findcostup(t_tablist	*tl, int rest_nbr_box);
 t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown);
 t_tablist	*ft_rotateup(t_tablist *tl, int costup, int poshigherlb);
 int	ft_findinferior(t_list *list, int nbr);
+int	ft_findsuperior(t_list *list, int nbr);
 int	ft_findnbr(t_tablist *tl, char arg, int pos);
 void    disp(t_list *head_a, t_list *head_b);
 #endif

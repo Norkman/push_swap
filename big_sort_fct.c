@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:41:12 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/02 18:27:41 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:50:01 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ t_tablist	*ft_putinlb(t_tablist *tl)
 	int posl;
 
 	posl = ft_findpos(tl, 'a', ft_findlower(tl, 'a'));
-	printf("lower : %d - ", ft_findlower(tl, 'a'));
-	printf("higher : %d\n", ft_findhigher(tl, 'a'));
+	//printf("lower : %d - ", ft_findlower(tl, 'a'));
+	//printf("higher : %d\n", ft_findhigher(tl, 'a'));
 	posh = ft_findpos(tl, 'a', ft_findhigher(tl, 'a'));
 
 	if (posl <= count_list(tl, 'a') - posl)

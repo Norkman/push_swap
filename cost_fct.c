@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:05:57 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/02 18:23:49 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:27:22 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	ft_findpos(t_tablist *tl, char arg, int nbr)
 	if (arg == 'b')
 		tmp = tl->lb;
 	pos = 0;
-	if (nbr == NULL)
-		return (pos);
 	while (tmp)
 	{
 		if (tmp->content == nbr)

@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:14:38 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/02 18:30:05 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:10:00 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,16 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	int	med;
 	int box;
 
-	box = 10;
+	box = 5;
 	tl = ft_putnbrofbox(tl, box);
 	//med = ft_med_list(tl);
 	
 	while (count_list(tl, 'b') > 0)
 	{
+		//if (count_list(tl, 'b') < 57)
+		//	printf_list(tl->lb);
+		//printf("pos higher : %d - ", ft_findpos(tl, 'b', ft_findhigher(tl, 'b')));
+		//printf("num higher : %d\n", ft_findhigher(tl, 'b'));
 		tl = ft_higher_up(tl, 'b');
 		tl = fct_push_arg(tl, 'a');	
 	}

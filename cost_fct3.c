@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 14:12:00 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/08/02 18:00:16 by nle-bret         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:06:41 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -37,28 +37,53 @@ int	ft_findinferior(t_list *list, int nbr)
 
 	i = 0;
 	tmp = list;
-	nbr_ret = NULL;
 	while (tmp)
 	{
 		num = tmp->content;
 		if (num < nbr)
-		{
 			nbr_ret = num;
-			//printf("first loop nbr_ret %d\n", nbr_ret);
-		}
 		tmp = tmp->next;
+		i++;
 	}
 	tmp = list;
 	while (tmp)
 	{
 		num = tmp->content;
-		//printf("nbr %d tmp->content %d nbr-ret%d\n", nbr, num, nbr_ret);
 		if (nbr_ret < num && num < nbr)
-		{
 			nbr_ret = num;
-			//printf("second loop nbr_ret %d\n", nbr_ret);
-		}
 		tmp = tmp->next;
 	}
+	if (i == 0)
+		nbr_ret = list->content;
+	return (nbr_ret);
+}
+
+int	ft_findsuperior(t_list *list, int nbr)
+{
+	t_list	*tmp;
+	int		i;
+	int		nbr_ret;
+	int		num;
+
+	i = 0;
+	tmp = list;
+	while (tmp)
+	{
+		num = tmp->content;
+		if (num > nbr)
+			nbr_ret = num;
+		tmp = tmp->next;
+		i++;
+	}
+	tmp = list;
+	while (tmp)
+	{
+		num = tmp->content;
+		if (nbr_ret > num && num > nbr)
+			nbr_ret = num;
+		tmp = tmp->next;
+	}
+	if (i == 0)
+		nbr_ret = list->content;
 	return (nbr_ret);
 }
