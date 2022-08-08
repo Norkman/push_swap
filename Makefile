@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address
 
 DEBUG	?= 0
 ifeq ($(DEBUG), 1)
@@ -36,12 +36,14 @@ OBJS	= ${SRC:.c=.o}
 
 CC		= gcc
 
-${NAME}: ${OBJS}
+HEADER	= push_swap.h
+
+all: ${NAME}
+
+${NAME}:  ${HEADER} ${OBJS}
 	cd sources && $(MAKE)
 	cp sources/libft.a .
 	${CC} ${FLAGS} -o ${NAME} ${OBJS} libft.a
-
-all: ${NAME}
 
 %.o: %.c
 	$(CC) -c $(FLAGS) -Isources/ $< -o $@
