@@ -87,3 +87,49 @@ int	ft_findsuperior(t_list *list, int nbr)
 		nbr_ret = list->content;
 	return (nbr_ret);
 }
+
+int	ft_howcostup(t_tablist *tl, int len)
+{
+	t_list	*tmpb;
+	int		pos_under_lb;
+	int		num_under_lb;
+	int		posinlb;
+	int		cost;
+
+	cost = len;
+	tmpb = tl->lb;
+	posinlb = 0;
+	while (tmpb)
+	{
+		num_under_lb = ft_findsuperior(tl->la, tl->lb->content);
+		pos_under_lb = ft_findpos(tl, 'a', num_under_lb);
+			if (cost > (posinlb + pos_under_lb))
+				cost = posinlb + pos_under_lb;
+		tmpb = tmpb->next;
+		posinlb++;
+	}
+	return (cost);
+}
+
+int	ft_howcostdown(t_tablist *tl, int len)
+{
+	t_list	*tmpb;
+	int		pos_under_lb;
+	int		num_under_lb;
+	int		posinlb;
+	int		cost;
+
+	cost = len;
+	tmpb = tl->lb;
+	posinlb = 0;
+	while (tmpb)
+	{
+		num_under_lb = ft_findsuperior(tl->la, tl->lb->content);
+		pos_under_lb = ft_findpos(tl, 'a', num_under_lb);
+			if (cost > len - (posinlb + pos_under_lb) - 1)
+				cost = len - (posinlb + pos_under_lb - 1);
+		tmpb = tmpb->next;
+		posinlb++;
+	}
+	return (cost);
+}

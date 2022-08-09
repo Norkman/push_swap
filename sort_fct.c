@@ -77,18 +77,22 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	int	med;
 	int box;
 	int num_up_la;
+	int	len;
 
 	box = 5;
+	len = count_list(tl, 'a');
 	tl = ft_putnbrofbox(tl, box);
 	//med = ft_med_list(tl);
-	if (ft_is_sorted(tl, 'a') != 1)
-		tl = fct_swap_arg(tl, 'a');
-	if (ft_find_higher(tl, 'b') > ft_find_highter(tl, 'a'))
-		tl = ft_highter_up(tl, 'a');
+	while (count_list(tl, 'b') > len - 15)
+	{
+		tl = ft_sortinla(tl, len);
+	}
+	/*
 	while (count_list(tl, 'b') > 0)
 	{
-		num_up_la = ft_findsuperior_la(tl->la, tl->lb->content);
+		tl = ft_sortinla(tl, len);
 	}
+	*/
 	/*
 	while (count_list(tl, 'b') > 0)
 	{

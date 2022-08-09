@@ -1,0 +1,141 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+add_list	fct_lst_push_swap.c	/^t_list	*add_list(int num, t_list *head)$/;"	f	typeref:typename:t_list *
+checkbase	sources/ft_convert_base.c	/^int	checkbase(char *base)$/;"	f	typeref:typename:int
+count_list	fct_lst_push_swap.c	/^int	count_list(t_tablist *tl, char arg)$/;"	f	typeref:typename:int
+fct_c	sources/ft_printf_utils.c	/^int	fct_c(va_list args)$/;"	f	typeref:typename:int
+fct_d	sources/ft_printf_utils2.c	/^int	fct_d(va_list args)$/;"	f	typeref:typename:int
+fct_p	sources/ft_printf_utils.c	/^int	fct_p(va_list args)$/;"	f	typeref:typename:int
+fct_perc	sources/ft_printf_utils2.c	/^int	fct_perc(char c)$/;"	f	typeref:typename:int
+fct_push	push_swap_fct.c	/^t_tablist	*fct_push(t_tablist *tl, char c)$/;"	f	typeref:typename:t_tablist *
+fct_push_arg	push_swap_fct.c	/^t_tablist	*fct_push_arg(t_tablist *tl, char arg)$/;"	f	typeref:typename:t_tablist *
+fct_rotate	push_swap_fct2.c	/^t_list	*fct_rotate(t_list *list)$/;"	f	typeref:typename:t_list *
+fct_rotate_arg	push_swap_fct2.c	/^t_tablist	*fct_rotate_arg(t_tablist *tl, char arg)$/;"	f	typeref:typename:t_tablist *
+fct_rotate_reverse	push_swap_fct2.c	/^t_list	*fct_rotate_reverse(t_list *list)$/;"	f	typeref:typename:t_list *
+fct_rotate_reverse_arg	push_swap_fct2.c	/^t_tablist	*fct_rotate_reverse_arg(t_tablist *tl, char arg)$/;"	f	typeref:typename:t_tablist *
+fct_s	sources/ft_printf_utils.c	/^int	fct_s(va_list args)$/;"	f	typeref:typename:int
+fct_swap	push_swap_fct.c	/^t_list	*fct_swap(t_list *list)$/;"	f	typeref:typename:t_list *
+fct_swap_arg	push_swap_fct.c	/^t_tablist	*fct_swap_arg(t_tablist *tl, char arg)$/;"	f	typeref:typename:t_tablist *
+fct_u	sources/ft_printf_utils2.c	/^int	fct_u(va_list args)$/;"	f	typeref:typename:int
+fct_x	sources/ft_printf_utils.c	/^int	fct_x(va_list args)$/;"	f	typeref:typename:int
+fct_x_up	sources/ft_printf_utils.c	/^int	fct_x_up(va_list args)$/;"	f	typeref:typename:int
+filter	sources/ft_printf.c	/^int	filter(const char *format, long int pos, va_list args)$/;"	f	typeref:typename:int
+free_list	fct_lst_push_swap.c	/^void	free_list(t_tablist *tl)$/;"	f	typeref:typename:void
+ft_abs	sources/ft_convert_base2.c	/^long	ft_abs(long nb)$/;"	f	typeref:typename:long
+ft_atoi	sources/ft_atoi.c	/^int	ft_atoi(const char *nptr)$/;"	f	typeref:typename:int
+ft_atoi_base	sources/ft_convert_base.c	/^int	ft_atoi_base(char *str, char *base)$/;"	f	typeref:typename:int
+ft_atoli	sources/ft_atoli.c	/^long int	ft_atoli(const char *nptr)$/;"	f	typeref:typename:long int
+ft_begin	sources/ft_strtrim.c	/^static int	ft_begin(char const *s1, char const *set)$/;"	f	typeref:typename:int	file:
+ft_bzero	sources/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f	typeref:typename:void
+ft_calloc	sources/ft_calloc.c	/^void	*ft_calloc(size_t nmemb, size_t size)$/;"	f	typeref:typename:void *
+ft_check_double	make_list.c	/^int	ft_check_double(t_tablist *tl)$/;"	f	typeref:typename:int
+ft_check_error	make_list.c	/^int	ft_check_error(int length, char **list)$/;"	f	typeref:typename:int
+ft_choicerotate	big_sort_fct.c	/^t_tablist	*ft_choicerotate(t_tablist *tl, int costh, int costl)$/;"	f	typeref:typename:t_tablist *
+ft_constmat	sources/ft_split.c	/^static char	**ft_constmat(int word, const char *str, char c)$/;"	f	typeref:typename:char **	file:
+ft_conststr	sources/ft_itoa.c	/^static void	ft_conststr(char *str, long int n, int len)$/;"	f	typeref:typename:void	file:
+ft_conststr	sources/ft_llutoa.c	/^static void	ft_conststr(char *str, long int n, int len)$/;"	f	typeref:typename:void	file:
+ft_conststr	sources/ft_utoa.c	/^static void	ft_conststr(char *str, long int n, int len)$/;"	f	typeref:typename:void	file:
+ft_convert	sources/ft_atoi.c	/^static int	ft_convert(char *str, int i, int num)$/;"	f	typeref:typename:int	file:
+ft_convert	sources/ft_atoli.c	/^static long int	ft_convert(char *str, int i, long int num)$/;"	f	typeref:typename:long int	file:
+ft_convert_base	sources/ft_convert_base2.c	/^char	*ft_convert_base(char *nbr, char *base_from, char *base_to)$/;"	f	typeref:typename:char *
+ft_countword	sources/ft_split.c	/^static int	ft_countword(const char *str, char c)$/;"	f	typeref:typename:int	file:
+ft_end	sources/ft_strtrim.c	/^static int	ft_end(char const *s1, char const *set, int len)$/;"	f	typeref:typename:int	file:
+ft_findcostdown	cost_fct2.c	/^int	ft_findcostdown(t_tablist *tl, int rest_nbr_box)$/;"	f	typeref:typename:int
+ft_findcostup	cost_fct2.c	/^int	ft_findcostup(t_tablist	*tl, int rest_nbr_box)$/;"	f	typeref:typename:int
+ft_findhigher	cost_fct.c	/^int ft_findhigher(t_tablist *tl, char arg)$/;"	f	typeref:typename:int
+ft_findinferior	cost_fct3.c	/^int	ft_findinferior(t_list *list, int nbr)$/;"	f	typeref:typename:int
+ft_findlower	cost_fct.c	/^int ft_findlower(t_tablist *tl, char arg)$/;"	f	typeref:typename:int
+ft_findnbr	cost_fct3.c	/^int	ft_findnbr(t_tablist *tl, char arg, int pos)$/;"	f	typeref:typename:int
+ft_findpos	cost_fct.c	/^int	ft_findpos(t_tablist *tl, char arg, int nbr)$/;"	f	typeref:typename:int
+ft_findsuperior	cost_fct3.c	/^int	ft_findsuperior(t_list *list, int nbr)$/;"	f	typeref:typename:int
+ft_higher_up	cost_fct.c	/^t_tablist *ft_higher_up(t_tablist *tl, char arg)$/;"	f	typeref:typename:t_tablist *
+ft_howcostdown	cost_fct3.c	/^int	ft_howcostdown(t_tablist *tl, int len)$/;"	f	typeref:typename:int
+ft_howcostup	cost_fct3.c	/^int	ft_howcostup(t_tablist *tl, int len)$/;"	f	typeref:typename:int
+ft_howmanyunder	push_swap_utils.c	/^int	ft_howmanyunder(t_list *list, int nbr)$/;"	f	typeref:typename:int
+ft_is_error	sources/ft_putnbr_base.c	/^int	ft_is_error(char *base)$/;"	f	typeref:typename:int
+ft_is_reversesorted	make_list.c	/^int	ft_is_reversesorted(t_tablist *tl, char arg)$/;"	f	typeref:typename:int
+ft_is_sorted	make_list.c	/^int	ft_is_sorted(t_tablist *tl, char arg)$/;"	f	typeref:typename:int
+ft_isalnum	sources/ft_isalnum.c	/^int	ft_isalnum(int a)$/;"	f	typeref:typename:int
+ft_isalpha	sources/ft_isalpha.c	/^int	ft_isalpha(int a)$/;"	f	typeref:typename:int
+ft_isascii	sources/ft_isascii.c	/^int	ft_isascii(int a)$/;"	f	typeref:typename:int
+ft_isdigit	sources/ft_isdigit.c	/^int	ft_isdigit(int a)$/;"	f	typeref:typename:int
+ft_isprint	sources/ft_isprint.c	/^int	ft_isprint(int a)$/;"	f	typeref:typename:int
+ft_isspace	sources/ft_atoi.c	/^static int	ft_isspace(const char c)$/;"	f	typeref:typename:int	file:
+ft_isspace	sources/ft_atoli.c	/^static int	ft_isspace(const char c)$/;"	f	typeref:typename:int	file:
+ft_itoa	sources/ft_itoa.c	/^char	*ft_itoa(int num)$/;"	f	typeref:typename:char *
+ft_len_nbr	sources/ft_convert_base2.c	/^long	ft_len_nbr(long long int nbr, char *base)$/;"	f	typeref:typename:long
+ft_lennum	sources/ft_itoa.c	/^static int	ft_lennum(long int n)$/;"	f	typeref:typename:int	file:
+ft_lennum	sources/ft_llutoa.c	/^static int	ft_lennum(long int n)$/;"	f	typeref:typename:int	file:
+ft_lennum	sources/ft_utoa.c	/^static int	ft_lennum(long int n)$/;"	f	typeref:typename:int	file:
+ft_llutoa	sources/ft_llutoa.c	/^char	*ft_llutoa(unsigned long long num)$/;"	f	typeref:typename:char *
+ft_lower_up	cost_fct.c	/^t_tablist *ft_lower_up(t_tablist *tl, char arg)$/;"	f	typeref:typename:t_tablist *
+ft_lstadd_back	sources/ft_lstadd_back.c	/^void	ft_lstadd_back(t_list *alst, t_list *new)$/;"	f	typeref:typename:void
+ft_lstadd_front	sources/ft_lstadd_front.c	/^void	ft_lstadd_front(t_list **alst, t_list *new)$/;"	f	typeref:typename:void
+ft_lstclear	sources/ft_lstclear.c	/^void	ft_lstclear(t_list **lst, int (*del)(int))$/;"	f	typeref:typename:void
+ft_lstdelone	sources/ft_lstdelone.c	/^void	ft_lstdelone(t_list *lst, void (*del)(int))$/;"	f	typeref:typename:void
+ft_lstiter	sources/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, int (*f)(int))$/;"	f	typeref:typename:void
+ft_lstlast	sources/ft_lstlast.c	/^t_list	*ft_lstlast(t_list *lst)$/;"	f	typeref:typename:t_list *
+ft_lstmap	sources/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, int (*f)(int), int (*del)(int))$/;"	f	typeref:typename:t_list *
+ft_lstnew	sources/ft_lstnew.c	/^t_list	*ft_lstnew(int content)$/;"	f	typeref:typename:t_list *
+ft_lstsize	sources/ft_lstsize.c	/^int	ft_lstsize(t_list *lst)$/;"	f	typeref:typename:int
+ft_make_list	make_list.c	/^t_tablist	*ft_make_list(int len_list, char **nbr_char)$/;"	f	typeref:typename:t_tablist *
+ft_med_list	push_swap_utils.c	/^int	ft_med_list(t_tablist *tl)$/;"	f	typeref:typename:int
+ft_memchr	sources/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memcmp	sources/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f	typeref:typename:int
+ft_memcpy	sources/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memmove	sources/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f	typeref:typename:void *
+ft_memset	sources/ft_memset.c	/^void	*ft_memset(void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_printf	sources/ft_printf.c	/^int	ft_printf(const char *format, ...)$/;"	f	typeref:typename:int
+ft_putchar	sources/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f	typeref:typename:void
+ft_putchar	sources/ft_putnbr_base.c	/^void	ft_putchar(int str)$/;"	f	typeref:typename:void
+ft_putchar_fd	sources/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f	typeref:typename:void
+ft_putendl_fd	sources/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_putinlb	big_sort_fct.c	/^t_tablist	*ft_putinlb(t_tablist *tl)$/;"	f	typeref:typename:t_tablist *
+ft_putnbr_base	sources/ft_putnbr_base.c	/^void	ft_putnbr_base(unsigned long long nb, char *base)$/;"	f	typeref:typename:void
+ft_putnbr_base_2	sources/ft_convert_base2.c	/^void	ft_putnbr_base_2(long nbr, char *base, char *dest, int i)$/;"	f	typeref:typename:void
+ft_putnbr_fd	sources/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f	typeref:typename:void
+ft_putnbrofbox	big_sort_fct.c	/^t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)$/;"	f	typeref:typename:t_tablist *
+ft_putstr_fd	sources/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_rotatecostdown	cost_fct4.c	/^t_tablist	*ft_rotatecostdown(t_tablist *tl, int posinlb, int pos_under_lb)$/;"	f	typeref:typename:t_tablist *
+ft_rotatecostup	cost_fct4.c	/^t_tablist	*ft_rotatecostup(t_tablist *tl, int posinlb, int pos_under_lb)$/;"	f	typeref:typename:t_tablist *
+ft_rotatedown	cost_fct2.c	/^t_tablist	*ft_rotatedown(t_tablist *tl, int costdown)$/;"	f	typeref:typename:t_tablist *
+ft_rotatedownalt	cost_fct4.c	/^t_tablist	*ft_rotatedownalt(t_tablist *tl, int cost, int len)$/;"	f	typeref:typename:t_tablist *
+ft_rotatelesscost	cost_fct2.c	/^t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown, int len)$/;"	f	typeref:typename:t_tablist *
+ft_rotateup	cost_fct2.c	/^t_tablist	*ft_rotateup(t_tablist *tl, int costup)$/;"	f	typeref:typename:t_tablist *
+ft_rotateupalt	cost_fct4.c	/^t_tablist	*ft_rotateupalt(t_tablist *tl, int cost, int len)$/;"	f	typeref:typename:t_tablist *
+ft_sort_three	sort_fct.c	/^t_tablist	*ft_sort_three(t_tablist *tl)$/;"	f	typeref:typename:t_tablist *
+ft_sort_under_five	sort_fct.c	/^t_tablist	*ft_sort_under_five(t_tablist *tl)$/;"	f	typeref:typename:t_tablist *
+ft_sort_under_fivehundred	sort_fct.c	/^t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)$/;"	f	typeref:typename:t_tablist *
+ft_sort_under_seventy	sort_fct.c	/^t_tablist	*ft_sort_under_seventy(t_tablist *tl)$/;"	f	typeref:typename:t_tablist *
+ft_sortinla	big_sort_fct.c	/^t_tablist	*ft_sortinla(t_tablist *tl, int len)$/;"	f	typeref:typename:t_tablist *
+ft_split	sources/ft_split.c	/^char	**ft_split(char const *s, char c)$/;"	f	typeref:typename:char **
+ft_strchr	sources/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f	typeref:typename:char *
+ft_strdup	sources/ft_strdup.c	/^char	*ft_strdup(const char *s)$/;"	f	typeref:typename:char *
+ft_striteri	sources/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char*))$/;"	f	typeref:typename:void
+ft_strjoin	sources/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+ft_strlcat	sources/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+ft_strlcpy	sources/ft_strlcpy.c	/^size_t	ft_strlcpy(char *dst, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+ft_strlen	sources/ft_strlen.c	/^int	ft_strlen(const char *a)$/;"	f	typeref:typename:int
+ft_strmapi	sources/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f	typeref:typename:char *
+ft_strncmp	sources/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
+ft_strnstr	sources/ft_strnstr.c	/^char	*ft_strnstr(const char *big, const char *little, size_t len)$/;"	f	typeref:typename:char *
+ft_strrchr	sources/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f	typeref:typename:char *
+ft_strtrim	sources/ft_strtrim.c	/^char	*ft_strtrim(char const *s1, char const *set)$/;"	f	typeref:typename:char *
+ft_substr	sources/ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+ft_tolower	sources/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f	typeref:typename:int
+ft_toupper	sources/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f	typeref:typename:int
+ft_utoa	sources/ft_utoa.c	/^char	*ft_utoa(int n)$/;"	f	typeref:typename:char *
+is_in_base	sources/ft_convert_base.c	/^int	is_in_base(char str, char *base)$/;"	f	typeref:typename:int
+is_under_egal	sources/ft_memmove.c	/^static void	is_under_egal(unsigned char *dst2, unsigned char *src2, size_t len)$/;"	f	typeref:typename:void	file:
+is_upper	sources/ft_memmove.c	/^static void	is_upper(unsigned char *dst2, unsigned char *src2, size_t len)$/;"	f	typeref:typename:void	file:
+len_of_base	sources/ft_putnbr_base.c	/^int	len_of_base(char *base)$/;"	f	typeref:typename:int
+main	main.c	/^int	main(int argc, char **argv)$/;"	f	typeref:typename:int
+my_read	sources/ft_printf.c	/^long int	my_read(const char *format, long int pos, long int *ret)$/;"	f	typeref:typename:long int
+printf_list	fct_lst_push_swap.c	/^void	printf_list(t_list *head)$/;"	f	typeref:typename:void
+push_swap	push_swap.c	/^int	push_swap(int argc, char **argv)$/;"	f	typeref:typename:int
+remove_list	fct_lst_push_swap.c	/^t_list	*remove_list(int num, t_list *head)$/;"	f	typeref:typename:t_list *

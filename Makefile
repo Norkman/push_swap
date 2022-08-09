@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 DEBUG	?= 0
 ifeq ($(DEBUG), 1)
@@ -30,7 +30,8 @@ SRC		= push_swap.c\
 		  push_swap_fct2.c\
 		  main.c\
 		  cost_fct2.c\
-		  cost_fct3.c
+		  cost_fct3.c\
+		  cost_fct4.c
 
 OBJS	= ${SRC:.c=.o}
 
