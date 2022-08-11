@@ -27,23 +27,23 @@ t_tablist	*ft_rotatecostup(t_tablist *tl, int posinlb, int pos_under_lb)
 t_tablist	*ft_rotateupalt(t_tablist *tl, int cost, int len)
 {
 	t_list	*tmpb;
-	int		pos_under_lb;
-	int		num_under_lb;
+	int		pos_und;
 	int		posinlb;
 
 	tmpb = tl->lb;
 	posinlb = 0;
 	while (tmpb)
 	{
-		num_under_lb = ft_findsuperior(tl->la, tl->lb->content);
-		pos_under_lb = ft_findpos(tl, 'a', num_under_lb);
-			if (cost == posinlb + pos_under_lb)
-				break ;
+		pos_und = ft_findpos(tl, 'a', ft_findsuperior(tl->la, tl->lb->content));
+		if (cost == posinlb && posinlb >= pos_und)
+			break ;
+		if (cost == pos_und && posinlb <= pos_und)
+			break ;
 		tmpb = tmpb->next;
 		posinlb++;
 	}
-	printf("posinlb : %d - pos_under_lb : %d\n", posinlb, pos_under_lb);
-	tl = ft_rotatecostup(tl, posinlb, pos_under_lb);
+	//printf("posinlb : %d - pos_und : %d\n", posinlb, pos_und);
+	tl = ft_rotatecostup(tl, posinlb, pos_und);
 	return (tl);
 }
 
@@ -51,11 +51,9 @@ t_tablist	*ft_rotatecostdown(t_tablist *tl, int posinlb, int pos_under_lb)
 {
 	int i;
 
-	posinlb = count_list(tl, 'b') - posinlb;
+	//posinlb = count_list(tl, 'b') - posinlb;
 	pos_under_lb = count_list(tl, 'a') - pos_under_lb;
-	printf("posinlb : %d - pos_under_lb : %d\n", posinlb,
-
-			pos_under_lb);
+	//printf("posinlb : %d - pos_under_lb : %d\n", posinlb, pos_under_lb);
 	i = 0;
 	if (posinlb <= pos_under_lb)
 	{
@@ -79,22 +77,26 @@ t_tablist	*ft_rotatecostdown(t_tablist *tl, int posinlb, int pos_under_lb)
 t_tablist	*ft_rotatedownalt(t_tablist *tl, int cost, int len)
 {
 	t_list	*tmpb;
-	int		pos_under_lb;
-	int		num_under_lb;
+	int		pos_und;
 	int		posinlb;
+	int		costall;
 
 	tmpb = tl->lb;
 	posinlb = 0;
+	costall = len;
 	while (tmpb)
 	{
-		num_under_lb = ft_findsuperior(tl->la, tl->lb->content);
-		pos_under_lb = ft_findpos(tl, 'a', num_under_lb);
-			if (cost == len - (posinlb + pos_under_lb - 1))
-				break ;
+		pos_und = ft_findpos(tl, 'a', ft_findsuperior(tl->la, tl->lb->content));
+		if (cost == count_list(tl, 'b') - posinlb
+			&& count_list(tl, 'b') - posinlb >= count_list(tl, 'a') - pos_und)
+			break ;
+		if (cost == count_list(tl, 'a') - pos_und
+			&& count_list(tl, 'b') - posinlb >= count_list(tl, 'a') - pos_und)
+			break ;
 		tmpb = tmpb->next;
 		posinlb++;
 	}
-	printf("posinlb : %d - pos_under_lb : %d\n", posinlb, pos_under_lb);
-	tl = ft_rotatecostdown(tl, posinlb, pos_under_lb);
+	//printf("posinlb : %d - pos_und : %d\n", posinlb, count_list(tl, 'a') - pos_und);
+	tl = ft_rotatecostdown(tl, posinlb, pos_und);
 	return (tl);
 }

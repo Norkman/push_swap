@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/push_swap",
+            "args": ["503", "-402", "549", "251", "391", "334", "-493", "490", "-281", "-803", "-525", "741", "-608", "513", "-471", "-134", "408", "603", "824", "-332", "-691", "341", "-620", "744", "514", "346", "-69", "-126", "540", "244", "-745", "293", "176", "339", "109", "653", "-741", "-698", "-364", "83", "446", "820", "11", "-660", "502", "-579", "-372", "-640", "-165", "800", "-355", "-894", "496", "-940", "617", "-301", "739", "121", "861", "479", "-81", "-226", "-868", "66", "-678", "-41", "763", "-482", "407", "162", "-282", "-229", "-187", "-755", "473", "899", "-679", "208", "-707", "-70", "609", "-53", "-766", "485", "755", "-544", "642", "-759", "-609", "218", "-148", "248", "-944", "319", "-626", "-75", "-427", "787", "-285", "-959"],
+            "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description":  "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+
+    ]
+}

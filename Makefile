@@ -6,11 +6,11 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/08/01 15:06:01 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/08/11 12:57:23 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS	= -g3 #-Wall -Wextra -Werror -g3 -fsanitize=address
 
 DEBUG	?= 0
 ifeq ($(DEBUG), 1)
@@ -44,10 +44,10 @@ all: ${NAME}
 ${NAME}:  ${HEADER} ${OBJS}
 	cd sources && $(MAKE)
 	cp sources/libft.a .
-	${CC} ${FLAGS} -o ${NAME} ${OBJS} libft.a
+	${CC} -o ${NAME} ${OBJS} libft.a
 
 %.o: %.c
-	$(CC) -c $(FLAGS) -Isources/ $< -o $@
+	$(CC) -c $(CFLAGS) -Isources/ $< -o $@
 
 clean:
 	rm -f ${OBJS}

@@ -52,6 +52,24 @@ t_tablist	*ft_putinlb(t_tablist *tl)
 	return (tl);
 }
 
+
+t_tablist	*ft_putinlbalt(t_tablist *tl)
+{
+	int numhigher;
+	int num;
+
+	numhigher = ft_findhigher(tl, 'a');
+	while (count_list(tl, 'a') > 2)
+	{
+		num = tl->la->content;
+		if (num == numhigher)
+			tl = fct_rotate_arg(tl, 'a');
+		else
+			tl = fct_push_arg(tl, 'b');
+	}
+	return (tl);
+}
+
 t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
 {
 	int	costup;
@@ -73,22 +91,19 @@ t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
 		if (tl->la->content == num_higher)
 			tl = fct_rotate_arg(tl, 'a');
 		else
-			tl = fct_push_arg(tl, 'b');
+			tl = fct_push_arg(tl, 'b');	
 	}
 	return (tl);
 }
 
 t_tablist	*ft_sortinla(t_tablist *tl, int len)
 {
-	int posinla;
-	int posinlb;
 	int costup;
 	int costdown;
 	
 	costup = ft_howcostup(tl, len);
 	costdown = ft_howcostdown(tl, len);
-	printf("costup : %d - costdown : %d\n", costup, costdown);
+	//printf("costup : %d - costdown : %d\n", costup, costdown);
 	tl = ft_rotatelesscost(tl, costup, costdown, len);
 	return (tl);
-
 }

@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+t_data ft_m_d_la(t_tablist *tl)
+{
+	t_data	data;
+	int		num;
+	int		num_sup;
+
+	num = tl->lb->content;
+	data.pos = ft_findpos(tl, 'b', num);
+	num_sup = ft_findsuperior(tl->la, num);
+	data.up_o = ft_findpos(tl, 'a', num_sup);
+	return (data);
+}
+
 int	ft_howmanyunder(t_list *list, int nbr)
 {
 	t_list	*tmp;

@@ -80,13 +80,17 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	int	len;
 
 	box = 5;
-	len = count_list(tl, 'a');
+	len = count_list(tl, 'a');	
 	tl = ft_putnbrofbox(tl, box);
+	//tl = ft_putinlbalt(tl);
 	//med = ft_med_list(tl);
-	while (count_list(tl, 'b') > len - 15)
+	
+	while (count_list(tl, 'b') > len - 10)
 	{
 		tl = ft_sortinla(tl, len);
 	}
+	
+	//printf_list(tl->la);
 	/*
 	while (count_list(tl, 'b') > 0)
 	{

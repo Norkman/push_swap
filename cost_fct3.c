@@ -91,45 +91,54 @@ int	ft_findsuperior(t_list *list, int nbr)
 int	ft_howcostup(t_tablist *tl, int len)
 {
 	t_list	*tmpb;
-	int		pos_under_lb;
-	int		num_under_lb;
-	int		posinlb;
+	int		costall;
 	int		cost;
+	t_data	d;
 
+	costall = len;
 	cost = len;
 	tmpb = tl->lb;
-	posinlb = 0;
 	while (tmpb)
 	{
-		num_under_lb = ft_findsuperior(tl->la, tl->lb->content);
-		pos_under_lb = ft_findpos(tl, 'a', num_under_lb);
-			if (cost > (posinlb + pos_under_lb))
-				cost = posinlb + pos_under_lb;
+		d = ft_m_d_la(tl);
+		if (costall > d.pos + d.up_o)
+		{
+			costall = d.pos + d.up_o;
+			if (d.pos >= d.up_o)
+				cost = d.pos;
+			else 
+				cost = d.up_o;
+		}
 		tmpb = tmpb->next;
-		posinlb++;
 	}
+	printf("pos in lb : %d - pos in la under : %d\n", d.pos, d.up_o);
 	return (cost);
 }
+
 
 int	ft_howcostdown(t_tablist *tl, int len)
 {
 	t_list	*tmpb;
-	int		pos_under_lb;
-	int		num_under_lb;
-	int		posinlb;
+	int		costall;
 	int		cost;
+	t_data	d;
 
+	costall = len;
 	cost = len;
 	tmpb = tl->lb;
-	posinlb = 0;
 	while (tmpb)
 	{
-		num_under_lb = ft_findsuperior(tl->la, tl->lb->content);
-		pos_under_lb = ft_findpos(tl, 'a', num_under_lb);
-			if (cost > len - (posinlb + pos_under_lb) - 1)
-				cost = len - (posinlb + pos_under_lb - 1);
+		d = ft_m_d_la(tl);
+		if (costall > len - (d.pos + d.up_o))
+		{
+			costall = len - (d.pos + d.up_o);
+			if (count_list(tl, 'a') - d.pos <= count_list(tl, 'b') - d.up_o)
+				cost = count_list(tl, 'b') - d.pos;
+			else 
+				cost = count_list(tl, 'a') - d.up_o;
+		}
 		tmpb = tmpb->next;
-		posinlb++;
 	}
+	printf("pos in lb : %d - pos in la under : %d\n", d.pos, d.up_o);
 	return (cost);
 }
