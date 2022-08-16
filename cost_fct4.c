@@ -1,24 +1,24 @@
 #include "push_swap.h"
 
-t_tablist	*ft_rotatecostup(t_tablist *tl, int posinlb, int pos_under_lb)
+t_tablist	*ft_rotatecostup(t_tablist *tl, t_data d)
 {
 	int i;
 
 	i = 0;
-	if (posinlb <= pos_under_lb)
+	if (d.pos <= d.up_o)
 	{
-		while (i++ < posinlb)
+		while (i++ < d.pos)
 			tl = fct_rotate_arg(tl, 'r');
-		i = posinlb;
-		while (i++ < pos_under_lb)
+		i = d.pos;
+		while (i++ < d.up_o)
 			tl = fct_rotate_arg(tl, 'a');
 	}
-	i = 0;
-	if (pos_under_lb < posinlb)
+	if (d.up_o < d.pos)
 	{
-		while (i++ < pos_under_lb)
+		while (i++ < d.up_o)
 			tl = fct_rotate_arg(tl, 'r');
-		while (i++ < posinlb)
+		i = d.up_o;
+		while (i++ < d.pos)
 			tl = fct_rotate_arg(tl, 'b');
 	}
 	return (tl);
@@ -27,48 +27,43 @@ t_tablist	*ft_rotatecostup(t_tablist *tl, int posinlb, int pos_under_lb)
 t_tablist	*ft_rotateupalt(t_tablist *tl, int cost, int len)
 {
 	t_list	*tmpb;
-	int		pos_und;
-	int		posinlb;
+	t_data	d;
 
 	tmpb = tl->lb;
-	posinlb = 0;
 	while (tmpb)
 	{
-		pos_und = ft_findpos(tl, 'a', ft_findsuperior(tl->la, tl->lb->content));
-		if (cost == posinlb && posinlb >= pos_und)
+		d = ft_m_d_la(tl, tmpb->content);
+		if (cost == d.pos && d.pos >= d.up_o)
 			break ;
-		if (cost == pos_und && posinlb <= pos_und)
+		if (cost == d.up_o && d.pos <= d.up_o)
 			break ;
 		tmpb = tmpb->next;
-		posinlb++;
 	}
-	//printf("posinlb : %d - pos_und : %d\n", posinlb, pos_und);
-	tl = ft_rotatecostup(tl, posinlb, pos_und);
+	tl = ft_rotatecostup(tl, d);
 	return (tl);
 }
 
-t_tablist	*ft_rotatecostdown(t_tablist *tl, int posinlb, int pos_under_lb)
+t_tablist	*ft_rotatecostdown(t_tablist *tl, t_data d)
 {
 	int i;
 
-	//posinlb = count_list(tl, 'b') - posinlb;
-	pos_under_lb = count_list(tl, 'a') - pos_under_lb;
-	//printf("posinlb : %d - pos_under_lb : %d\n", posinlb, pos_under_lb);
+	d.up_o = d.len_la - d.up_o;
+	d.pos = d.len_lb - d.pos;
 	i = 0;
-	if (posinlb <= pos_under_lb)
+	if (d.pos <= d.up_o)
 	{
-		while (i++ < posinlb)
+		while (i++ < d.pos)
 			tl = fct_rotate_reverse_arg(tl, 'r');
-		i = posinlb;
-		while (i++ < pos_under_lb)
+		i = d.pos;
+		while (i++ < d.up_o)
 			tl = fct_rotate_reverse_arg(tl, 'a');
 	}
-	i = 0;
-	if (pos_under_lb < posinlb)
+	if (d.up_o < d.pos)
 	{
-		while (i++ < pos_under_lb)
+		while (i++ < d.up_o)
 			tl = fct_rotate_reverse_arg(tl, 'r');
-		while (i++ < posinlb)
+		i = d.up_o;
+		while (i++ < d.pos)
 			tl = fct_rotate_reverse_arg(tl, 'b');
 	}
 	return (tl);
@@ -77,26 +72,18 @@ t_tablist	*ft_rotatecostdown(t_tablist *tl, int posinlb, int pos_under_lb)
 t_tablist	*ft_rotatedownalt(t_tablist *tl, int cost, int len)
 {
 	t_list	*tmpb;
-	int		pos_und;
-	int		posinlb;
-	int		costall;
+	t_data	d;
 
 	tmpb = tl->lb;
-	posinlb = 0;
-	costall = len;
 	while (tmpb)
 	{
-		pos_und = ft_findpos(tl, 'a', ft_findsuperior(tl->la, tl->lb->content));
-		if (cost == count_list(tl, 'b') - posinlb
-			&& count_list(tl, 'b') - posinlb >= count_list(tl, 'a') - pos_und)
+		d = ft_m_d_la(tl, tmpb->content);
+		if (cost == d.len_lb - d.pos && d.len_lb - d.pos >= d.len_la - d.up_o)
 			break ;
-		if (cost == count_list(tl, 'a') - pos_und
-			&& count_list(tl, 'b') - posinlb >= count_list(tl, 'a') - pos_und)
+		if (cost == d.len_la - d.up_o && d.len_lb - d.pos <= d.len_la - d.up_o)
 			break ;
 		tmpb = tmpb->next;
-		posinlb++;
 	}
-	//printf("posinlb : %d - pos_und : %d\n", posinlb, count_list(tl, 'a') - pos_und);
-	tl = ft_rotatecostdown(tl, posinlb, pos_und);
+	tl = ft_rotatecostdown(tl, d);
 	return (tl);
 }

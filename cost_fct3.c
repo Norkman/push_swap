@@ -100,7 +100,7 @@ int	ft_howcostup(t_tablist *tl, int len)
 	tmpb = tl->lb;
 	while (tmpb)
 	{
-		d = ft_m_d_la(tl);
+		d = ft_m_d_la(tl, tmpb->content);
 		if (costall > d.pos + d.up_o)
 		{
 			costall = d.pos + d.up_o;
@@ -111,7 +111,7 @@ int	ft_howcostup(t_tablist *tl, int len)
 		}
 		tmpb = tmpb->next;
 	}
-	printf("pos in lb : %d - pos in la under : %d\n", d.pos, d.up_o);
+	//printf("pos in lb : %d - pos in la under : %d\n", d.pos, d.up_o);
 	return (cost);
 }
 
@@ -128,17 +128,16 @@ int	ft_howcostdown(t_tablist *tl, int len)
 	tmpb = tl->lb;
 	while (tmpb)
 	{
-		d = ft_m_d_la(tl);
+		d = ft_m_d_la(tl, tmpb->content);
 		if (costall > len - (d.pos + d.up_o))
 		{
 			costall = len - (d.pos + d.up_o);
-			if (count_list(tl, 'a') - d.pos <= count_list(tl, 'b') - d.up_o)
-				cost = count_list(tl, 'b') - d.pos;
+			if (d.len_la - d.pos <= d.len_lb - d.up_o)
+				cost = d.len_lb - d.pos;
 			else 
-				cost = count_list(tl, 'a') - d.up_o;
+				cost = d.len_la - d.up_o;
 		}
 		tmpb = tmpb->next;
 	}
-	printf("pos in lb : %d - pos in la under : %d\n", d.pos, d.up_o);
 	return (cost);
 }

@@ -26,6 +26,8 @@ typedef struct s_data
 {
 	int pos;
 	int up_o;
+	int len_la;
+	int len_lb;
 }t_data;
 
 t_tablist	*ft_make_list(int len_list, char **nbr_char);
@@ -71,14 +73,14 @@ t_tablist	*ft_rotatedown(t_tablist *tl, int costdown);
 int	ft_findinferior(t_list *list, int nbr);
 int	ft_findsuperior(t_list *list, int nbr);
 int	ft_findnbr(t_tablist *tl, char arg, int pos);
-t_data ft_m_d_la(t_tablist *tl);
+t_data ft_m_d_la(t_tablist *tl, int nbr);
 void    disp(t_list *head_a, t_list *head_b);
 t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown, int len);
 t_tablist	*ft_sortinla(t_tablist *tl, int len);
 t_tablist	*ft_rotatedownalt(t_tablist *tl, int cost, int len);
-t_tablist	*ft_rotatecostdown(t_tablist *tl, int posinlb, int pos_under_lb);
+t_tablist	*ft_rotatecostdown(t_tablist *tl, t_data d);
 t_tablist	*ft_rotateupalt(t_tablist *tl, int cost, int len);
-t_tablist	*ft_rotatecostup(t_tablist *tl, int posinlb, int pos_under_lb);
+t_tablist	*ft_rotatecostup(t_tablist *tl, t_data d);
 int	ft_howcostdown(t_tablist *tl, int len);
 int	ft_howcostup(t_tablist *tl, int len);
 t_tablist	*ft_putinlbalt(t_tablist *tl);

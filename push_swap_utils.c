@@ -12,16 +12,18 @@
 
 #include "push_swap.h"
 
-t_data ft_m_d_la(t_tablist *tl)
+t_data ft_m_d_la(t_tablist *tl, int nbr)
 {
 	t_data	data;
 	int		num;
 	int		num_sup;
 
-	num = tl->lb->content;
+	num = nbr;
 	data.pos = ft_findpos(tl, 'b', num);
-	num_sup = ft_findsuperior(tl->la, num);
+	num_sup = ft_findsuperior(tl->la, nbr);
 	data.up_o = ft_findpos(tl, 'a', num_sup);
+	data.len_la = count_list(tl, 'a');
+	data.len_lb = count_list(tl, 'b');
 	return (data);
 }
 
