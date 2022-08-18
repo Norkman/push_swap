@@ -85,11 +85,11 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	//tl = ft_putinlbalt(tl);
 	//med = ft_med_list(tl);
 	
-	while (count_list(tl, 'b') > len - 26)
+	while (count_list(tl, 'b') > 0)
 	{
 		tl = ft_sortinla(tl, len);
-		printf_list(tl->la);
-		printf_list(tl->lb);
+		//printf_list(tl->la);
+		//printf_list(tl->lb);
 	}
 	tl = ft_lower_up(tl, 'a');	
 	//printf_list(tl->la);
