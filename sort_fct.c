@@ -74,7 +74,7 @@ t_tablist	*ft_sort_under_seventy(t_tablist *tl)
 
 t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 {
-	int	med;
+	//int	med;
 	int box;
 	int num_up_la;
 	int	len;
@@ -85,11 +85,13 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	//tl = ft_putinlbalt(tl);
 	//med = ft_med_list(tl);
 	
-	while (count_list(tl, 'b') > 0)
+	while (count_list(tl, 'b') > len - 26)
 	{
 		tl = ft_sortinla(tl, len);
+		printf_list(tl->la);
+		printf_list(tl->lb);
 	}
-	
+	tl = ft_lower_up(tl, 'a');	
 	//printf_list(tl->la);
 	/*
 	while (count_list(tl, 'b') > 0)

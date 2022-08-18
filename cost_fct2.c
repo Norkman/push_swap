@@ -86,7 +86,7 @@ t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown, int len)
 	{
 		tl = ft_rotateupalt(tl, costup, len);
 	}
-	else (costup > costdown)
+	if (costup > costdown)
 	{
 		tl = ft_rotatedownalt(tl, costdown, len);
 	}

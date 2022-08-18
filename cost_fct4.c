@@ -47,10 +47,16 @@ t_tablist	*ft_rotatecostdown(t_tablist *tl, t_data d)
 {
 	int i;
 
-	d.up_o = d.len_la - d.up_o;
-	d.pos = d.len_lb - d.pos;
 	i = 0;
-	if (d.pos <= d.up_o)
+	if (d.up_o > d.len_la / 2)
+	{
+		while (i++ < d.len_la - d.up_o)
+			tl = fct_rotate_arg(tl, 'a');
+		i = 0;
+		while (i++ < d.pos)
+			tl = fct_rotate_reverse_arg(tl, 'b');			
+	}
+	else if (d.pos <= d.up_o)
 	{
 		while (i++ < d.pos)
 			tl = fct_rotate_reverse_arg(tl, 'r');
@@ -58,7 +64,7 @@ t_tablist	*ft_rotatecostdown(t_tablist *tl, t_data d)
 		while (i++ < d.up_o)
 			tl = fct_rotate_reverse_arg(tl, 'a');
 	}
-	if (d.up_o < d.pos)
+	else if (d.up_o < d.pos)
 	{
 		while (i++ < d.up_o)
 			tl = fct_rotate_reverse_arg(tl, 'r');
@@ -84,6 +90,8 @@ t_tablist	*ft_rotatedownalt(t_tablist *tl, int cost, int len)
 			break ;
 		tmpb = tmpb->next;
 	}
+	d.up_o = d.len_la - d.up_o;
+	d.pos = d.len_lb - d.pos;
 	tl = ft_rotatecostdown(tl, d);
 	return (tl);
 }
