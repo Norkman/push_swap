@@ -31,7 +31,9 @@ SRC		= push_swap.c\
 		  main.c\
 		  cost_fct2.c\
 		  cost_fct3.c\
-		  cost_fct4.c
+		  cost_fct4.c\
+		  cost_fct5.c\
+		  cost_fct6.c
 
 OBJS	= ${SRC:.c=.o}
 

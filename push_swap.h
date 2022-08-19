@@ -29,6 +29,13 @@ typedef struct s_data
 	int len_la;
 	int len_lb;
 }t_data;
+typedef struct s_cost
+{
+	int	up;
+	int	down;
+	int	updown;
+	int	downup;
+}t_cost;
 
 t_tablist	*ft_make_list(int len_list, char **nbr_char);
 t_list	*add_list(int num, t_list *head);
@@ -75,13 +82,19 @@ int	ft_findsuperior(t_list *list, int nbr);
 int	ft_findnbr(t_tablist *tl, char arg, int pos);
 t_data ft_m_d_la(t_tablist *tl, int nbr);
 void    disp(t_list *head_a, t_list *head_b);
-t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown, int len);
+t_tablist	*ft_rotatelesscost(t_tablist *tl, t_cost cost, int len);
 t_tablist	*ft_sortinla(t_tablist *tl, int len);
 t_tablist	*ft_rotatedownalt(t_tablist *tl, int cost, int len);
 t_tablist	*ft_rotatecostdown(t_tablist *tl, t_data d);
 t_tablist	*ft_rotateupalt(t_tablist *tl, int cost, int len);
 t_tablist	*ft_rotatecostup(t_tablist *tl, t_data d);
+t_tablist	*ft_rotatedownup(t_tablist *tl, int cost, int len);
+t_tablist	*ft_rotateupdown(t_tablist *tl, int cost, int len);
+t_tablist	*ft_rotatecostdownup(t_tablist *tl, t_data d);
+t_tablist	*ft_rotatecostupdown(t_tablist *tl, t_data d);
 int	ft_howcostdown(t_tablist *tl, int len);
 int	ft_howcostup(t_tablist *tl, int len);
+int	ft_howcostupdown(t_tablist *tl, int len);
+int	ft_howcostdownup(t_tablist *tl, int len);
 t_tablist	*ft_putinlbalt(t_tablist *tl);
 #endif

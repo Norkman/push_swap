@@ -73,23 +73,38 @@ t_tablist	*ft_rotatedown(t_tablist *tl, int costdown)
 	}
 	return (tl);
 }
-t_tablist	*ft_rotatelesscost(t_tablist *tl, int costup, int costdown, int len)
+t_tablist	*ft_rotatelesscost(t_tablist *tl, t_cost cost, int len)
 {
 	int nbr_la;
-
-	// if (something)
-	// {
-	// 		tl = ft_rotatemixte();
-	// }
-
-	if (costup <= costdown)
+	/*
+	if (cost.up <= cost.down && cost.up <= cost.updown && cost.up <= cost.downup)
+		tl = ft_rotateupalt(tl, cost.up, len);
+	else if(cost.down <= cost.up && cost.down <= cost.updown && cost.down <= cost.downup)
+		tl = ft_rotatedownalt(tl, cost.down, len);
+	else if(cost.updown <= cost.down && cost.updown <= cost.up && cost.updown <= cost.downup)
+		tl = ft_rotateupdown(tl, cost.updown, len);
+	else if(cost.downup <= cost.down && cost.downup <= cost.updown && cost.downup <= cost.up)
+		tl = ft_rotatedownup(tl, cost.downup, len);
+	*/
+	if (cost.up <= cost.down)
 	{
-		tl = ft_rotateupalt(tl, costup, len);
+		tl = ft_rotateupalt(tl, cost.up, len);
 	}
-	if (costup > costdown)
+	if (cost.up > cost.down)
 	{
-		tl = ft_rotatedownalt(tl, costdown, len);
+		tl = ft_rotatedownalt(tl, cost.down, len);
 	}
+	/*
+	if (cost.updown <= cost.downup)
+	{
+		tl = ft_rotateupdown(tl, cost.updown, len);
+	}
+	if (cost.downup < cost.updown)
+	{
+		tl = ft_rotatedownup(tl, cost.downup, len);
+	}
+	*/
 	tl = fct_push_arg(tl, 'a');
 	return (tl);
 }
+

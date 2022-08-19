@@ -98,12 +98,14 @@ t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
 
 t_tablist	*ft_sortinla(t_tablist *tl, int len)
 {
-	int costup;
-	int costdown;
-	
-	costup = ft_howcostup(tl, len);
-	costdown = ft_howcostdown(tl, len);
-	//printf("costup : %d - costdown : %d\n", costup, costdown);
-	tl = ft_rotatelesscost(tl, costup, costdown, len);
+	t_cost	cost;
+
+	cost.updown = ft_howcostupdown(tl, len);
+	cost.downup = ft_howcostdownup(tl, len);
+	cost.up = ft_howcostup(tl, len);
+	cost.down = ft_howcostdown(tl, len);
+	//printf("costup : %d - costdown : %d\n", cost.up, cost.down);
+	//printf("costupdown : %d - costdownup : %d\n", cost.updown, cost.downup);
+	tl = ft_rotatelesscost(tl, cost, len);
 	return (tl);
 }

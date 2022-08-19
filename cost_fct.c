@@ -53,6 +53,7 @@ int ft_findlower(t_tablist *tl, char arg)
 		}
 		tmpi = tmpi->next;
 	}
+	//printf("%d", nbr);
 	return (nbr);
 }
 

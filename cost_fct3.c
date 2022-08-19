@@ -132,7 +132,7 @@ int	ft_howcostdown(t_tablist *tl, int len)
 		if (costall > len - (d.pos + d.up_o))
 		{
 			costall = len - (d.pos + d.up_o);
-			if (d.len_la - d.pos >= d.len_lb - d.up_o)
+			if (d.len_lb - d.pos >= d.len_la - d.up_o)
 				cost = d.len_lb - d.pos;
 			else 
 				cost = d.len_la - d.up_o;

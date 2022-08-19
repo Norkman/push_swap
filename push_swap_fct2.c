@@ -31,7 +31,7 @@ t_tablist	*fct_rotate_arg(t_tablist *tl, char arg)
 		tl->la = fct_rotate(tl->la);
 	if (arg == 'b' && count_list(tl, 'b') > 1)
 		tl->lb = fct_rotate(tl->lb);
-	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'a'))
+	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'a') > 1)
 	{
 		tl->la = fct_rotate(tl->la);
 		tl->lb = fct_rotate(tl->lb);
@@ -46,7 +46,7 @@ t_list	*fct_rotate_reverse(t_list *list)
 	t_list	*list_end;
 
 	list_head = ft_lstlast(list);
-	list_end = list;
+	list_end = list;;
 	while (list_end->next->next)
 		list_end = list_end->next;
 	list_end->next = NULL;
@@ -60,7 +60,7 @@ t_tablist	*fct_rotate_reverse_arg(t_tablist *tl, char arg)
 		tl->la = fct_rotate_reverse(tl->la);
 	if (arg == 'b' && count_list(tl, 'b') > 1)
 		tl->lb = fct_rotate_reverse(tl->lb);
-	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'a'))
+	if (arg == 'r' && count_list(tl, 'b') > 1 && count_list(tl, 'a') > 1)
 	{
 		tl->la = fct_rotate_reverse(tl->la);
 		tl->lb = fct_rotate_reverse(tl->lb);
