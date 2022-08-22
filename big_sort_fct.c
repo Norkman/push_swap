@@ -36,8 +36,6 @@ t_tablist	*ft_putinlb(t_tablist *tl)
 	int posl;
 
 	posl = ft_findpos(tl, 'a', ft_findlower(tl, 'a'));
-	//printf("lower : %d - ", ft_findlower(tl, 'a'));
-	//printf("higher : %d\n", ft_findhigher(tl, 'a'));
 	posh = ft_findpos(tl, 'a', ft_findhigher(tl, 'a'));
 
 	if (posl <= count_list(tl, 'a') - posl)
@@ -104,8 +102,6 @@ t_tablist	*ft_sortinla(t_tablist *tl, int len)
 	cost.downup = ft_howcostdownup(tl, len);
 	cost.up = ft_howcostup(tl, len);
 	cost.down = ft_howcostdown(tl, len);
-	//printf("costup : %d - costdown : %d\n", cost.up, cost.down);
-	//printf("costupdown : %d - costdownup : %d\n", cost.updown, cost.downup);
 	tl = ft_rotatelesscost(tl, cost, len);
 	return (tl);
 }

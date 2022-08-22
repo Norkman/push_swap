@@ -76,7 +76,7 @@ t_tablist	*ft_rotatedown(t_tablist *tl, int costdown)
 t_tablist	*ft_rotatelesscost(t_tablist *tl, t_cost cost, int len)
 {
 	int nbr_la;
-	/*
+
 	if (cost.up <= cost.down && cost.up <= cost.updown && cost.up <= cost.downup)
 		tl = ft_rotateupalt(tl, cost.up, len);
 	else if(cost.down <= cost.up && cost.down <= cost.updown && cost.down <= cost.downup)
@@ -85,7 +85,7 @@ t_tablist	*ft_rotatelesscost(t_tablist *tl, t_cost cost, int len)
 		tl = ft_rotateupdown(tl, cost.updown, len);
 	else if(cost.downup <= cost.down && cost.downup <= cost.updown && cost.downup <= cost.up)
 		tl = ft_rotatedownup(tl, cost.downup, len);
-	*/
+	/*
 	if (cost.up <= cost.down)
 	{
 		tl = ft_rotateupalt(tl, cost.up, len);
@@ -94,7 +94,6 @@ t_tablist	*ft_rotatelesscost(t_tablist *tl, t_cost cost, int len)
 	{
 		tl = ft_rotatedownalt(tl, cost.down, len);
 	}
-	/*
 	if (cost.updown <= cost.downup)
 	{
 		tl = ft_rotateupdown(tl, cost.updown, len);

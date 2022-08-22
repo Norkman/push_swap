@@ -80,18 +80,14 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 	int	len;
 	int pos_up;
 
-	box = 10;
+	box = 5;
 	len = count_list(tl, 'a');	
-	//tl = ft_putnbrofbox(tl, box);
-	tl = ft_putinlbalt(tl);
+	tl = ft_putnbrofbox(tl, box);
+	//tl = ft_putinlbalt(tl);
 	//med = ft_med_list(tl);
 	
 	while (count_list(tl, 'b') > 1)
-	{
 		tl = ft_sortinla(tl, len);
-		//printf_list(tl->la);
-		//printf_list(tl->lb);
-	}
 	pos_up = ft_findpos(tl, 'a', ft_findsuperior(tl->la, tl->lb->content));
 	if (pos_up < (len - 1) / 2)
 	{
@@ -102,9 +98,6 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 		while (pos_up++ < len - 1)
 			tl = fct_rotate_reverse_arg(tl, 'a');
 	tl = fct_push_arg(tl, 'a');
-
-	//printf_list(tl->la);
 	tl = ft_lower_up(tl, 'a');
-	//printf_list(tl->la);
 	return(tl);
 }
