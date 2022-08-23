@@ -27,6 +27,9 @@ int	ft_check_error(int length, char **list)
 				||ft_isdigit(list[i][j]) == 0 && list[i][j] != '-'
 				|| list[i][j] == '-' && ft_isdigit(list[i][j + 1]) == 0)
 				return (1);
+			if (ft_atoli(list[i]) > 2147483647
+				|| ft_atoli(list[i]) < -2147483648)
+				return (1);
 			j++;
 		}
 		i++;
@@ -74,26 +77,6 @@ int	ft_is_sorted(t_tablist *tl, char arg)
 	return (0);
 }
 
-int	ft_is_reversesorted(t_tablist *tl, char arg)
-{
-	int		i;
-	t_list	*tmp;
-
-	if (arg == 'a')
-		tmp = tl->la;
-	else if (arg == 'b')
-		tmp = tl->lb;
-	if (count_list(tl, arg) < 2)
-		return (0);
-	while (tmp->next)
-	{
-		if (tmp->content < tmp->next->content)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
-
 t_tablist	*ft_make_list(int len_list, char **nbr_char)
 {
 	t_tablist	*tl;
@@ -116,4 +99,3 @@ t_tablist	*ft_make_list(int len_list, char **nbr_char)
 	}
 	return (tl);
 }
-

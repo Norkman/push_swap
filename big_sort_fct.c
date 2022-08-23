@@ -30,14 +30,13 @@ t_tablist	*ft_choicerotate(t_tablist *tl, int costh, int costl)
 
 t_tablist	*ft_putinlb(t_tablist *tl)
 {
-	int costh;
-	int costl;
-	int posh;
-	int posl;
+	int	costh;
+	int	costl;
+	int	posh;
+	int	posl;
 
 	posl = ft_findpos(tl, 'a', ft_findlower(tl, 'a'));
 	posh = ft_findpos(tl, 'a', ft_findhigher(tl, 'a'));
-
 	if (posl <= count_list(tl, 'a') - posl)
 		costl = posl;
 	else
@@ -50,11 +49,10 @@ t_tablist	*ft_putinlb(t_tablist *tl)
 	return (tl);
 }
 
-
 t_tablist	*ft_putinlbalt(t_tablist *tl)
 {
-	int numhigher;
-	int num;
+	int	numhigher;
+	int	num;
 
 	numhigher = ft_findhigher(tl, 'a');
 	while (count_list(tl, 'a') > 2)
@@ -72,9 +70,9 @@ t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
 {
 	int	costup;
 	int	len_la;
-	int rest_nbr_box;
-	int nbr_la;
-	int num_higher;
+	int	rest_nbr_box;
+	int	nbr_la;
+	int	num_higher;
 
 	len_la = count_list(tl, 'a');
 	num_higher = ft_findhigher(tl, 'a');
@@ -89,7 +87,7 @@ t_tablist	*ft_putnbrofbox(t_tablist *tl, int box)
 		if (tl->la->content == num_higher)
 			tl = fct_rotate_arg(tl, 'a');
 		else
-			tl = fct_push_arg(tl, 'b');	
+			tl = fct_push_arg(tl, 'b');
 	}
 	return (tl);
 }

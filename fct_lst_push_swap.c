@@ -14,69 +14,70 @@
 
 t_list	*add_list(int num, t_list *head)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    tmp = (t_list *) malloc(sizeof(t_list));
-    tmp->content = num;
-    tmp->next = head;
-    head = tmp;
+	tmp = (t_list *) malloc(sizeof(t_list));
+	tmp->content = num;
+	tmp->next = head;
+	head = tmp;
 	return (head);
 }
 
 void	printf_list(t_list *head)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
 	tmp = head;
-   	while (tmp != NULL)
+	while (tmp != NULL)
 	{
-        ft_printf("%d ", tmp->content);
-        tmp = tmp->next;
+		ft_printf("%d ", tmp->content);
+		tmp = tmp->next;
 	}
 	ft_printf("\n");
 }
 
 int	count_list(t_tablist *tl, char arg)
 {
-    int cnt;
-    t_list *tmp;
+	int		cnt;
+	t_list	*tmp;
 
 	cnt = 0;
 	if (arg == 'a')
 		tmp = tl->la;
 	else if (arg == 'b')
 		tmp = tl->lb;
-    while (tmp != NULL)
+	while (tmp != NULL)
 	{
-        cnt++;
-        tmp = tmp->next;
-    }
-	return(cnt);
+		cnt++;
+		tmp = tmp->next;
+	}
+	return (cnt);
 }
 
 t_list	*remove_list(int num, t_list *head)
 {
-    t_list *tmp = head;
+	t_list	*tmp;
 
+	tmp = head;
 	head = NULL;
-	return(head);
+	return (head);
 }
 
 void	free_list(t_tablist *tl)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	while (tl->la != NULL)
 	{
-       tmp = tl->la;
-       tl->la = tl->la->next;
-       free(tmp);
-    }
+		tmp = tl->la;
+		tl->la = tl->la->next;
+		free(tmp);
+	}
 	while (tl->lb != NULL)
 	{
-       tmp = tl->lb;
-       tl->lb = tl->lb->next;
-       free(tmp);
-    }
+		tmp = tl->lb;
+		tl->lb = tl->lb->next;
+		free(tmp);
+	}
 	free(tl);
 }

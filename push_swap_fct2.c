@@ -21,7 +21,6 @@ t_list	*fct_rotate(t_list *list)
 	list_end = ft_lstlast(list);
 	list_end->next = list;
 	list->next = NULL;
-
 	return (list_head);
 }
 
@@ -46,7 +45,7 @@ t_list	*fct_rotate_reverse(t_list *list)
 	t_list	*list_end;
 
 	list_head = ft_lstlast(list);
-	list_end = list;;
+	list_end = list;
 	while (list_end->next->next)
 		list_end = list_end->next;
 	list_end->next = NULL;

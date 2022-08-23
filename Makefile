@@ -29,11 +29,12 @@ SRC		= push_swap.c\
 		  push_swap_fct.c\
 		  push_swap_fct2.c\
 		  main.c\
-		  cost_fct2.c\
-		  cost_fct3.c\
-		  cost_fct4.c\
-		  cost_fct5.c\
-		  cost_fct6.c
+		  find.c\
+		  find2.c\
+		  rotate.c\
+		  cost_fct_mix.c\
+		  rotatealt.c\
+		  rotatemix.c
 
 OBJS	= ${SRC:.c=.o}
 

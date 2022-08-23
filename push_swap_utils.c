@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_data ft_m_d_la(t_tablist *tl, int nbr)
+t_data	ft_m_d_la(t_tablist *tl, int nbr)
 {
 	t_data	data;
 	int		num;
@@ -33,7 +33,6 @@ int	ft_howmanyunder(t_list *list, int nbr)
 	int		i;
 
 	i = 0;
-
 	tmp = list;
 	while (tmp)
 	{
@@ -55,9 +54,8 @@ int	ft_med_list(t_tablist *tl)
 	while (tmp)
 	{
 		nbr = tmp->content;
-		//printf("num : %d --> %d\n", nbr, ft_howmanyover(tl->la, nbr));
-			if (ft_howmanyunder(tl->la, nbr) == len / 2)
-				return (nbr);
+		if (ft_howmanyunder(tl->la, nbr) == len / 2)
+			return (nbr);
 		tmp = tmp->next;
 	}
 	return (0);

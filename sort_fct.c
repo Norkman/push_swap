@@ -15,24 +15,24 @@
 t_tablist	*ft_sort_three(t_tablist *tl)
 {
 	char	*list_fct;
-	
+
 	while (tl && count_list(tl, 'a') == 3)
 	{
-		if (tl->la->content < tl->la->next->content 
-				&& tl->la->next->content < tl->la->next->next->content)
+		if (tl->la->content < tl->la->next->content
+			&& tl->la->next->content < tl->la->next->next->content)
 			return (tl);
-		if (tl->la->content > tl->la->next->content 
-				&& tl->la->next->content < tl->la->next->next->content
-				&& tl->la->content > tl->la->next->next->content)
+		if (tl->la->content > tl->la->next->content
+			&& tl->la->next->content < tl->la->next->next->content
+			&& tl->la->content > tl->la->next->next->content)
 			tl = fct_rotate_arg(tl, 'a');
-		if (tl->la->content > tl->la->next->content 
-				&& tl->la->next->content < tl->la->next->next->content)
+		if (tl->la->content > tl->la->next->content
+			&& tl->la->next->content < tl->la->next->next->content)
 			tl = fct_swap_arg(tl, 'a');
-		if (tl->la->content > tl->la->next->content 
-				&& tl->la->next->content > tl->la->next->next->content)
+		if (tl->la->content > tl->la->next->content
+			&& tl->la->next->content > tl->la->next->next->content)
 			tl = fct_rotate_arg(tl, 'a');
-		if (tl->la->content < tl->la->next->content 
-				&& tl->la->next->content > tl->la->next->next->content)
+		if (tl->la->content < tl->la->next->content
+			&& tl->la->next->content > tl->la->next->next->content)
 			tl = fct_rotate_reverse_arg(tl, 'a');
 	}
 	return (tl);
@@ -40,7 +40,7 @@ t_tablist	*ft_sort_three(t_tablist *tl)
 
 t_tablist	*ft_sort_under_five(t_tablist *tl)
 {
-	int 	len_la;
+	int	len_la;
 
 	if (ft_is_sorted(tl, 'a') == 0)
 		exit(0);
@@ -74,18 +74,14 @@ t_tablist	*ft_sort_under_seventy(t_tablist *tl)
 
 t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 {
-	//int	med;
-	int box;
-	int num_up_la;
+	int	box;
+	int	num_up_la;
 	int	len;
-	int pos_up;
+	int	pos_up;
 
-	box = 5;
-	len = count_list(tl, 'a');	
+	len = count_list(tl, 'a');
+	box = len / 100 + 1;
 	tl = ft_putnbrofbox(tl, box);
-	//tl = ft_putinlbalt(tl);
-	//med = ft_med_list(tl);
-	
 	while (count_list(tl, 'b') > 1)
 		tl = ft_sortinla(tl, len);
 	pos_up = ft_findpos(tl, 'a', ft_findsuperior(tl->la, tl->lb->content));
@@ -94,10 +90,10 @@ t_tablist	*ft_sort_under_fivehundred(t_tablist *tl)
 		while (pos_up-- > 0)
 			tl = fct_rotate_arg(tl, 'a');
 	}
-	else 
+	else
 		while (pos_up++ < len - 1)
 			tl = fct_rotate_reverse_arg(tl, 'a');
 	tl = fct_push_arg(tl, 'a');
 	tl = ft_lower_up(tl, 'a');
-	return(tl);
+	return (tl);
 }
