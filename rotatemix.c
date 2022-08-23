@@ -37,8 +37,6 @@ t_tablist	*ft_rotatecostupdown(t_tablist *tl, t_data d)
 	return (tl);
 }
 
-//////
-
 t_tablist	*ft_rotatedownup(t_tablist *tl, int cost, int len)
 {
 	t_list	*tmpb;

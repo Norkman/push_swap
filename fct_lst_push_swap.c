@@ -54,15 +54,6 @@ int	count_list(t_tablist *tl, char arg)
 	return (cnt);
 }
 
-t_list	*remove_list(int num, t_list *head)
-{
-	t_list	*tmp;
-
-	tmp = head;
-	head = NULL;
-	return (head);
-}
-
 void	free_list(t_tablist *tl)
 {
 	t_list	*tmp;

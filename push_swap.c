@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+t_tablist	*ft_begin(t_tablist *tl)
+{
+	if (count_list(tl, 'a') == 2 && ft_is_sorted(tl, 'a') == 1)
+		tl = fct_swap_arg(tl, 'a');
+	else if (count_list(tl, 'a') == 3)
+		tl = ft_sort_three(tl);
+	else if (count_list(tl, 'a') <= 5)
+		tl = ft_sort_under_five(tl);
+	else if (count_list(tl, 'a') <= 500)
+		tl = ft_sort_under_fivehundred(tl);
+	return (tl);
+}
+
 int	push_swap(int argc, char **argv)
 {
 	t_tablist	*tl;
@@ -31,14 +44,7 @@ int	push_swap(int argc, char **argv)
 		free_list(tl);
 		return (0);
 	}
-	if (count_list(tl, 'a') == 2 && ft_is_sorted(tl, 'a') == 1)
-		tl = fct_swap_arg(tl, 'a');
-	else if (count_list(tl, 'a') == 3)
-		tl = ft_sort_three(tl);
-	else if (count_list(tl, 'a') <= 5)
-		tl = ft_sort_under_five(tl);
-	else if (count_list(tl, 'a') <= 500)
-		tl = ft_sort_under_fivehundred(tl);
+	tl = ft_begin(tl);
 	free_list(tl);
 	return (0);
 }
